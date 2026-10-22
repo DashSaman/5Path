@@ -1,0 +1,134 @@
+{
+  "local_only": true,
+  "WAN_bytes": 0,
+  "SSH_connections": 0,
+  "production_changes": false,
+  "cap": 3,
+  "phase": "LOCAL_FIXTURE_COMPLETE_NOT_PRODUCTION_ACCEPTANCE",
+  "build_patch_sha256": "b5cf6e62ee2f2047f11526364827de08623e2e5efa0f79ce476ba239b61f379f",
+  "binary_SHA256": {
+    "pristine": "34250993427fb77afe5e6f2bea01072240e8127824adcc8dd0106dde7dcd819b",
+    "patched": "e8d72383cc3ea0fb1d6cf539e6146913e448a4c75d17ca472b322535655fbae6"
+  },
+  "checks": {
+    "config_opt_in_and_fail_closed": true,
+    "zero_byte_pending_N_plus_1_rejected_before_backend": true,
+    "authenticated_streams_keep_N_slots_and_payload_SHA": true,
+    "existing_payload_survives_new_flow_selector_reject": true,
+    "incomplete_handshakes_expire_established_idle_does_not": true,
+    "bad-auth_rejects_releases_one_and_preserves_two_survivors": true,
+    "backend-refused_rejects_releases_one_and_preserves_two_survivors": true,
+    "malformed_rejects_releases_one_and_preserves_two_survivors": true,
+    "UDP-associate_rejects_releases_one_and_preserves_two_survivors": true,
+    "UoT-v2_rejects_releases_one_and_preserves_two_survivors": true,
+    "UoT-v1_rejects_releases_one_and_preserves_two_survivors": true,
+    "UDP_associate_and_both_UoT_rejected_no_remaining_UDP_listeners": true,
+    "first_FIN_retains_slot_second_FIN_releases_once_SHA_preserved": true,
+    "child_PID_and_start_ticks_preserved": true
+  },
+  "production_rollout_unlocked": false,
+  "overlap": {
+    "legacy_K": 3,
+    "native_N": 3,
+    "held_application_connections": 6,
+    "strict_aggregate_K_preserved": false,
+    "SYN_backlog_included": false
+  },
+  "handshake_expiry_observation_seconds": 15.013346060994081,
+  "UDP_observation_limit": "Endpoint socket tables only; transient bind syscalls not traced. Deny-listener implementation inspected separately.",
+  "local_CPU_memory_comparison": [
+    {
+      "mode": "old",
+      "file_bytes": 16384,
+      "bytes_each_direction": 33554432,
+      "concurrency": 2,
+      "wall_seconds": 0.4794897399988258,
+      "whole_front_CPU_seconds": 0.24,
+      "CPU_seconds_per_MiB": 0.0075,
+      "initial_RSS_bytes": 22589440,
+      "observed_peak_RSS_bytes": 22691840,
+      "process_lifetime_VmHWM_bytes": 22691840,
+      "observed_peak_FDs": 11
+    },
+    {
+      "mode": "pristine-native",
+      "file_bytes": 16384,
+      "bytes_each_direction": 33554432,
+      "concurrency": 2,
+      "wall_seconds": 0.4647707959957188,
+      "whole_front_CPU_seconds": 0.16,
+      "CPU_seconds_per_MiB": 0.005,
+      "initial_RSS_bytes": 37744640,
+      "observed_peak_RSS_bytes": 37744640,
+      "process_lifetime_VmHWM_bytes": 37744640,
+      "observed_peak_FDs": 21
+    },
+    {
+      "mode": "inline-native",
+      "file_bytes": 16384,
+      "bytes_each_direction": 33554432,
+      "concurrency": 2,
+      "wall_seconds": 0.5210071350011276,
+      "whole_front_CPU_seconds": 0.19000000000000003,
+      "CPU_seconds_per_MiB": 0.005937500000000001,
+      "initial_RSS_bytes": 38883328,
+      "observed_peak_RSS_bytes": 38883328,
+      "process_lifetime_VmHWM_bytes": 38883328,
+      "observed_peak_FDs": 21
+    }
+  ],
+  "same_compiler_pristine_and_inline": true,
+  "inline_CPU_not_above_pristine_in_this_sample": false,
+  "inline_CPU_below_old_in_this_sample": true,
+  "all_owned_children_reaped": true,
+  "status": "LOCAL_INLINE_PROOF_NOT_DEPLOYED",
+  "compiler": "go1.25.5",
+  "upstream_commit": "7054cac5124465ffdb145870d7c01885566711b1",
+  "build_tags": [
+    "with_clash_api"
+  ],
+  "compiler_module_h1": "h1:IkknVKy/4hLMR+ZwWfP4Oqhjz2sKqNtEXz1meP8P3Nc=",
+  "CGO_ENABLED": "0",
+  "comparison_limit": "Single short sequential CPU sample; 10ms process CPU accounting. Ordering, GC and runtime age are not controlled. No equal-load server claim or pristine-parity acceptance.",
+  "whole_server_CPU_benefit_proven": false,
+  "strict_aggregate_legacy_K_preserved": false,
+  "production_deployed": false,
+  "failed_initial_build": {
+    "stage": "custom-build",
+    "reason": "UoT constants imported from wrong package; corrected import alias in revision2",
+    "pristine_build_passed": true,
+    "listener_unit_passed": true
+  },
+  "failed_initial_fixture": {
+    "stage": "UDP-denial",
+    "reason": "Expected connection reset not accepted by fixture; cleanup succeeded. Failure cases initially lacked unrelated survivor assertions.",
+    "accepted_as_complete": false
+  },
+  "source_sha256": {
+    "private_fixture": "ead77d58f69a715acb1f36ad647365df91a60a084590f88d2f36a5cbb148ccac",
+    "public_fixture": "9d5029aa40c58786e91de3409d98692549d768321b96f835fd32768973a4e22b",
+    "patch": "b5cf6e62ee2f2047f11526364827de08623e2e5efa0f79ce476ba239b61f379f"
+  },
+  "sanitized_public_functional_fixture": {
+    "phase": "LOCAL_FIXTURE_COMPLETE_NOT_PRODUCTION_ACCEPTANCE",
+    "checks": {
+      "config_opt_in_and_fail_closed": true,
+      "zero_byte_pending_N_plus_1_rejected_before_backend": true,
+      "authenticated_streams_keep_N_slots_and_payload_SHA": true,
+      "existing_payload_survives_new_flow_selector_reject": true,
+      "incomplete_handshakes_expire_established_idle_does_not": true,
+      "bad-auth_rejects_releases_one_and_preserves_two_survivors": true,
+      "backend-refused_rejects_releases_one_and_preserves_two_survivors": true,
+      "malformed_rejects_releases_one_and_preserves_two_survivors": true,
+      "UDP-associate_rejects_releases_one_and_preserves_two_survivors": true,
+      "UoT-v2_rejects_releases_one_and_preserves_two_survivors": true,
+      "UoT-v1_rejects_releases_one_and_preserves_two_survivors": true,
+      "UDP_associate_and_both_UoT_rejected_no_remaining_UDP_listeners": true,
+      "first_FIN_retains_slot_second_FIN_releases_once_SHA_preserved": true,
+      "child_PID_and_start_ticks_preserved": true
+    },
+    "WAN_bytes": 0,
+    "all_owned_children_reaped": true,
+    "CPU_comparison_skipped_functional_only": true
+  }
+}

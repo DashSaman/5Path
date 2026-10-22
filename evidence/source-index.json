@@ -247,6 +247,20 @@
       "original_source_sha256": "b12427352dbeb2a48fe277605aa315d57f42d4e351c9bbeb8aa1510b4e72cdb2",
       "public_source_sha256": "f80b5e4a79a6e9ab4f3cc5751c8bfd7b05ba893a1e70d46834172743b2581a24",
       "deployment_addresses_replaced_with_documentation_examples": true
+    },
+    {
+      "path": "integration/native_inline_fixture.py",
+      "original_source_sha256": "ead77d58f69a715acb1f36ad647365df91a60a084590f88d2f36a5cbb148ccac",
+      "public_source_sha256": "9d5029aa40c58786e91de3409d98692549d768321b96f835fd32768973a4e22b",
+      "local_paths_adapted_for_portability": true,
+      "production_deployable": false
+    },
+    {
+      "path": "experimental/patches/sing-box-v1.14.3-tcp-admission.patch",
+      "original_source_sha256": "b5cf6e62ee2f2047f11526364827de08623e2e5efa0f79ce476ba239b61f379f",
+      "public_source_sha256": "b5cf6e62ee2f2047f11526364827de08623e2e5efa0f79ce476ba239b61f379f",
+      "local_paths_adapted_for_portability": false,
+      "production_deployable": false
     }
   ]
 }

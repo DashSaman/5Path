@@ -1,0 +1,307 @@
+--- a/option/simple.go
++++ b/option/simple.go
+@@ -7,8 +7,9 @@
+ 
+ type SocksInboundOptions struct {
+ 	ListenOptions
+-	Users          []auth.User           `json:"users,omitempty"`
+-	DomainResolver *DomainResolveOptions `json:"domain_resolver,omitempty"`
++	FivePathTCPAdmissionLimit int                   `json:"five_path_tcp_admission_limit,omitempty"`
++	Users                     []auth.User           `json:"users,omitempty"`
++	DomainResolver            *DomainResolveOptions `json:"domain_resolver,omitempty"`
+ }
+ 
+ type HTTPMixedInboundOptions struct {
+--- a/common/listener/listener.go
++++ b/common/listener/listener.go
+@@ -35,6 +35,7 @@
+ 	systemProxySOCKS         bool
+ 	tproxy                   bool
+ 
++	tcpAdmission         *tcpAdmission
+ 	tcpListener          net.Listener
+ 	systemProxy          settings.SystemProxy
+ 	udpConn              *net.UDPConn
+@@ -57,6 +58,7 @@
+ 	SetSystemProxy           bool
+ 	SystemProxySOCKS         bool
+ 	TProxy                   bool
++	TCPAdmissionLimit        int
+ }
+ 
+ func New(
+@@ -75,6 +77,7 @@
+ 		setSystemProxy:           options.SetSystemProxy,
+ 		systemProxySOCKS:         options.SystemProxySOCKS,
+ 		tproxy:                   options.TProxy,
++		tcpAdmission:             newTCPAdmission(options.TCPAdmissionLimit),
+ 	}
+ }
+ 
+--- a/common/listener/listener_tcp.go
++++ b/common/listener/listener_tcp.go
+@@ -110,12 +110,21 @@
+ 			return
+ 		}
+ 		acceptDelay = 0
++		var onClose N.CloseHandlerFunc
++		if l.tcpAdmission != nil {
++			var admitted bool
++			onClose, admitted = l.tcpAdmission.reserve(conn)
++			if !admitted {
++				_ = conn.Close()
++				continue
++			}
++		}
+ 		//nolint:staticcheck
+ 		metadata.InboundDetour = l.listenOptions.Detour
+ 		metadata.Source = M.SocksaddrFromNet(conn.RemoteAddr()).Unwrap()
+ 		metadata.OriginDestination = M.SocksaddrFromNet(conn.LocalAddr()).Unwrap()
+ 		ctx := log.ContextWithNewID(l.ctx)
+ 		l.logger.InfoContext(ctx, "inbound connection from ", metadata.Source)
+-		go l.connHandler.NewConnection(ctx, conn, metadata, nil)
++		go l.connHandler.NewConnection(ctx, conn, metadata, onClose)
+ 	}
+ }
+--- a/protocol/socks/inbound.go
++++ b/protocol/socks/inbound.go
+@@ -18,6 +18,7 @@
+ 	"github.com/sagernet/sing/common/logger"
+ 	M "github.com/sagernet/sing/common/metadata"
+ 	N "github.com/sagernet/sing/common/network"
++	SUOT "github.com/sagernet/sing/common/uot"
+ 	"github.com/sagernet/sing/protocol/socks"
+ )
+ 
+@@ -29,14 +30,21 @@
+ 
+ type Inbound struct {
+ 	inbound.Adapter
+-	router        adapter.ConnectionRouterEx
+-	logger        logger.ContextLogger
+-	listener      *listener.Listener
+-	authenticator *auth.Authenticator
+-	udpTimeout    time.Duration
++	router            adapter.ConnectionRouterEx
++	logger            logger.ContextLogger
++	listener          *listener.Listener
++	authenticator     *auth.Authenticator
++	udpTimeout        time.Duration
++	fivePathAdmission bool
+ }
+ 
+ func NewInbound(ctx context.Context, router adapter.Router, logger log.ContextLogger, tag string, options option.SocksInboundOptions) (adapter.Inbound, error) {
++	if options.FivePathTCPAdmissionLimit < 0 || options.FivePathTCPAdmissionLimit > 4096 {
++		return nil, E.New("invalid five_path_tcp_admission_limit")
++	}
++	if options.FivePathTCPAdmissionLimit > 0 && (len(options.Users) == 0 || options.Detour != "") {
++		return nil, E.New("5Path admission requires authenticated SOCKS without inbound detour")
++	}
+ 	var udpTimeout time.Duration
+ 	if options.UDPTimeout != 0 {
+ 		udpTimeout = time.Duration(options.UDPTimeout)
+@@ -44,11 +52,12 @@
+ 		udpTimeout = C.UDPTimeout
+ 	}
+ 	inbound := &Inbound{
+-		Adapter:       inbound.NewAdapter(C.TypeSOCKS, tag),
+-		router:        uot.NewRouter(router, logger),
+-		logger:        logger,
+-		authenticator: auth.NewAuthenticator(options.Users),
+-		udpTimeout:    udpTimeout,
++		Adapter:           inbound.NewAdapter(C.TypeSOCKS, tag),
++		router:            uot.NewRouter(router, logger),
++		logger:            logger,
++		authenticator:     auth.NewAuthenticator(options.Users),
++		udpTimeout:        udpTimeout,
++		fivePathAdmission: options.FivePathTCPAdmissionLimit > 0,
+ 	}
+ 	inbound.listener = listener.New(listener.Options{
+ 		Context:           ctx,
+@@ -56,6 +65,7 @@
+ 		Network:           []string{N.NetworkTCP},
+ 		Listen:            options.ListenOptions,
+ 		ConnectionHandler: inbound,
++		TCPAdmissionLimit: options.FivePathTCPAdmissionLimit,
+ 	})
+ 	return inbound, nil
+ }
+@@ -73,18 +83,45 @@
+ }
+ 
+ func (h *Inbound) NewConnection(ctx context.Context, conn net.Conn, metadata adapter.InboundContext, onClose N.CloseHandlerFunc) {
+-	err := socks.HandleConnectionEx(ctx, conn, std_bufio.NewReader(conn), h.authenticator, adapter.NewUpstreamHandler(metadata, h.newUserConnection, h.streamUserPacketConnection), h.listener, h.udpTimeout, metadata.Source, onClose)
+-	N.CloseOnHandshakeFailure(conn, onClose, err)
++	var packetListener socks.PacketListener = h.listener
++	if h.fivePathAdmission {
++		packetListener = denyAdmissionPacketListener{}
++		if err := conn.SetReadDeadline(time.Now().Add(15 * time.Second)); err != nil {
++			N.CloseOnHandshakeFailure(conn, onClose, err)
++			return
++		}
++	}
++	err := socks.HandleConnectionEx(ctx, conn, std_bufio.NewReader(conn), h.authenticator, adapter.NewUpstreamHandler(metadata, h.newUserConnection, h.streamUserPacketConnection), packetListener, h.udpTimeout, metadata.Source, onClose)
++	// Successful CONNECT hands the still-live stream to asynchronous routing.
++	// The upstream helper invokes onClose even for nil; never call it here on success.
++	if !h.fivePathAdmission || err != nil {
++		N.CloseOnHandshakeFailure(conn, onClose, err)
++	}
+ 	if err != nil {
+ 		if E.IsClosedOrCanceled(err) {
+ 			h.logger.DebugContext(ctx, "connection closed: ", err)
+ 		} else {
+-			h.logger.ErrorContext(ctx, E.Cause(err, "process connection from ", metadata.Source))
++			if h.fivePathAdmission {
++				// Upstream authentication errors may include received credential text.
++				h.logger.ErrorContext(ctx, "SOCKS TCP admission: handshake or route failed")
++			} else {
++				h.logger.ErrorContext(ctx, E.Cause(err, "process connection from ", metadata.Source))
++			}
+ 		}
+ 	}
+ }
+ 
+ func (h *Inbound) newUserConnection(ctx context.Context, conn net.Conn, metadata adapter.InboundContext, onClose N.CloseHandlerFunc) {
++	if h.fivePathAdmission {
++		if metadata.Destination.Fqdn == SUOT.MagicAddress || metadata.Destination.Fqdn == SUOT.LegacyMagicAddress {
++			N.CloseOnHandshakeFailure(conn, onClose, E.New("5Path admission is TCP-only"))
++			return
++		}
++		if err := conn.SetReadDeadline(time.Time{}); err != nil {
++			N.CloseOnHandshakeFailure(conn, onClose, err)
++			return
++		}
++	}
+ 	metadata.Inbound = h.Tag()
+ 	metadata.InboundType = h.Type()
+ 	user, loaded := auth.UserFromContext[string](ctx)
+@@ -99,6 +136,13 @@
+ }
+ 
+ func (h *Inbound) streamUserPacketConnection(ctx context.Context, conn N.PacketConn, metadata adapter.InboundContext, onClose N.CloseHandlerFunc) {
++	if h.fivePathAdmission {
++		_ = conn.Close()
++		if onClose != nil {
++			onClose(E.New("5Path admission is TCP-only"))
++		}
++		return
++	}
+ 	metadata.Inbound = h.Tag()
+ 	metadata.InboundType = h.Type()
+ 	metadata.OriginDestination = M.SocksaddrFromNet(conn.LocalAddr()).Unwrap()
+--- /dev/null
++++ b/common/listener/tcp_admission.go
+@@ -0,0 +1,41 @@
++package listener
++
++import (
++	N "github.com/sagernet/sing/common/network"
++	"net"
++	"sync"
++	"sync/atomic"
++)
++
++// A per-listener application cap. It does not count other frontends or SYN backlog.
++type tcpAdmission struct {
++	limit  int32
++	active atomic.Int32
++}
++
++func newTCPAdmission(limit int) *tcpAdmission {
++	if limit <= 0 {
++		return nil
++	}
++	return &tcpAdmission{limit: int32(limit)}
++}
++
++func (a *tcpAdmission) reserve(conn net.Conn) (N.CloseHandlerFunc, bool) {
++	for {
++		current := a.active.Load()
++		if current >= a.limit {
++			return nil, false
++		}
++		if a.active.CompareAndSwap(current, current+1) {
++			break
++		}
++	}
++	var once sync.Once
++	return func(_ error) {
++		once.Do(func() {
++			// Route callbacks can precede its final common.Close: close original first.
++			_ = conn.Close()
++			a.active.Add(-1)
++		})
++	}, true
++}
+--- /dev/null
++++ b/common/listener/tcp_admission_test.go
+@@ -0,0 +1,52 @@
++package listener
++
++import (
++	N "github.com/sagernet/sing/common/network"
++	"net"
++	"sync"
++	"testing"
++)
++
++func TestFivePathAdmissionConcurrentReservationsAndOnceRelease(t *testing.T) {
++	a := newTCPAdmission(3)
++	var lock sync.Mutex
++	var retained []N.CloseHandlerFunc
++	var peers []net.Conn
++	var wg sync.WaitGroup
++	start := make(chan struct{})
++	for i := 0; i < 100; i++ {
++		wg.Add(1)
++		go func() {
++			defer wg.Done()
++			<-start
++			c, p := net.Pipe()
++			release, ok := a.reserve(c)
++			if ok {
++				lock.Lock()
++				retained = append(retained, release)
++				peers = append(peers, p)
++				lock.Unlock()
++			} else {
++				_ = c.Close()
++				_ = p.Close()
++			}
++		}()
++	}
++	close(start)
++	wg.Wait()
++	if len(retained) != 3 || a.active.Load() != 3 {
++		t.Fatalf("admitted=%d active=%d", len(retained), a.active.Load())
++	}
++	for i, release := range retained {
++		release(nil)
++		release(nil)
++		var b [1]byte
++		if _, err := peers[i].Read(b[:]); err == nil {
++			t.Fatal("slot released before original closed")
++		}
++		_ = peers[i].Close()
++	}
++	if a.active.Load() != 0 {
++		t.Fatalf("leaked/negative slots: %d", a.active.Load())
++	}
++}
+--- /dev/null
++++ b/protocol/socks/admission_packet.go
+@@ -0,0 +1,14 @@
++package socks
++
++import (
++	"context"
++	E "github.com/sagernet/sing/common/exceptions"
++	"net"
++)
++
++// nil would make the SOCKS library bind a default ephemeral UDP socket.
++type denyAdmissionPacketListener struct{}
++
++func (denyAdmissionPacketListener) ListenPacket(net.ListenConfig, context.Context, string, string) (net.PacketConn, error) {
++	return nil, E.New("5Path admission is TCP-only")
++}

@@ -1,6 +1,6 @@
 {
-  "checked_utc": "2026-10-22T19:54:44.468796+00:00",
-  "portable_unit_tests": 30,
+  "checked_utc": "2026-10-22T23:17:22.008652+00:00",
+  "portable_unit_tests": 43,
   "portable_result": "PASS",
   "isolated_Linux_receiver_tests": 7,
   "isolated_Linux_receiver_result": "PASS",
@@ -9,5 +9,19 @@
   "server_changes_during_this_snapshot": false,
   "production_optimization_deployed": false,
   "WARP_installed_or_applied": false,
-  "raw_secrets_included": false
+  "raw_secrets_included": false,
+  "native_inline_listener_go_unit": "PASS",
+  "native_inline_actual_fixture": "PASS_AND_CLEAN",
+  "native_inline_public_functional_fixture": "PASS_AND_CLEAN_CPU_NOT_REPEATED",
+  "native_inline_production_rollout_unlocked": false,
+  "production_optimization_deployed_scope": "this inline source patch only",
+  "previously_committed_production_fronts": [
+    "TR",
+    "US"
+  ],
+  "historical_integration_results_not_rerun": [
+    "isolated_Linux_receiver_tests",
+    "local_native_front_fixture",
+    "local_socket_mark_namespace_fixture"
+  ]
 }
