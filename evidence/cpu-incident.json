@@ -1,0 +1,121 @@
+{
+  "observations": [
+    {
+      "event": "before_owner_moved_customers_to_T6",
+      "nodes": {
+        "IR": {
+          "valid": true,
+          "seconds": 300.00012242101366,
+          "CPU_weighted_pct": 32.39966896294483,
+          "minimum_MemAvailable_kB": 2932756
+        },
+        "GW": {
+          "valid": true,
+          "seconds": 300.00178667297587,
+          "CPU_weighted_pct": 97.12206056433807,
+          "minimum_MemAvailable_kB": 5062612
+        },
+        "DE": {
+          "valid": true,
+          "seconds": 300.00013548415154,
+          "CPU_weighted_pct": 95.71595112091451,
+          "minimum_MemAvailable_kB": 4688484
+        },
+        "FI": {
+          "valid": null,
+          "seconds": null,
+          "CPU_weighted_pct": null,
+          "minimum_MemAvailable_kB": null
+        },
+        "TR": {
+          "valid": true,
+          "seconds": 300.0007857689634,
+          "CPU_weighted_pct": 70.81940076146333,
+          "minimum_MemAvailable_kB": 160604
+        },
+        "US": {
+          "valid": true,
+          "seconds": 300.0000931657851,
+          "CPU_weighted_pct": 47.558937524446186,
+          "minimum_MemAvailable_kB": 830024
+        }
+      }
+    },
+    {
+      "event": "after_owner_moved_customers_to_T6",
+      "nodes": {
+        "IR": {
+          "valid": true,
+          "seconds": 300.00034652103204,
+          "CPU_weighted_pct": 53.96993444646722,
+          "minimum_MemAvailable_kB": 2238140
+        },
+        "GW": {
+          "valid": true,
+          "seconds": 300.0009163171053,
+          "CPU_weighted_pct": 42.32312089454947,
+          "minimum_MemAvailable_kB": 5648796
+        },
+        "DE": {
+          "valid": true,
+          "seconds": 300.0001449389383,
+          "CPU_weighted_pct": 37.1013611257233,
+          "minimum_MemAvailable_kB": 4927896
+        },
+        "FI": {
+          "valid": true,
+          "seconds": 300.000225848984,
+          "CPU_weighted_pct": 46.86923864800273,
+          "minimum_MemAvailable_kB": 2156528
+        },
+        "TR": {
+          "valid": true,
+          "seconds": 300.0018233230221,
+          "CPU_weighted_pct": 50.39372630350951,
+          "minimum_MemAvailable_kB": 219408
+        },
+        "US": {
+          "valid": true,
+          "seconds": 300.0005800463259,
+          "CPU_weighted_pct": 36.362324591464954,
+          "minimum_MemAvailable_kB": 846036
+        }
+      }
+    }
+  ],
+  "GW_country_slice_cores_before": 3.317,
+  "GW_country_slice_cores_after": 0.392,
+  "change_was_owner_customer_migration_not_agent_server_fix": true,
+  "later_residual_user_connections_seen": true,
+  "local_native_front_fixture": {
+    "scope": "LOCAL_LOOPBACK_ONLY",
+    "WAN_payload_bytes": 0,
+    "selector_changes_only_new_flows": true,
+    "existing_flow_survives_selection_change": true,
+    "all_down_rejects_new_and_preserves_existing": true,
+    "wrong_auth_rejected": true,
+    "local_CPU_comparison": [
+      {
+        "mode": "old",
+        "payload_bytes_each_direction": 33554432,
+        "seconds": 1.004126986998017,
+        "process_CPU_seconds": 0.43,
+        "CPU_seconds_per_MiB": 0.0134375
+      },
+      {
+        "mode": "native",
+        "payload_bytes_each_direction": 33554432,
+        "seconds": 0.7979099810036132,
+        "process_CPU_seconds": 0.29000000000000004,
+        "CPU_seconds_per_MiB": 0.009062500000000001
+      }
+    ],
+    "file_bytes": 16384,
+    "file_SHA_verified": true,
+    "passed": true,
+    "cleanup_verified": true
+  },
+  "native_front_deployed": false,
+  "WARP_installed_or_applied": false,
+  "capacity_claim": false
+}

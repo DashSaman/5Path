@@ -1,0 +1,253 @@
+{
+  "status": "HISTORICAL_ACCEPTANCE_NOT_CURRENT_CAPACITY_PROOF",
+  "countries": {
+    "DE": {
+      "report_utc": "2026-10-22T08:44:08.821227+00:00",
+      "accepted": true,
+      "published": true,
+      "handoff_ready": true,
+      "controller_exit": 0,
+      "SSH_closed": true,
+      "protocol": "SS2022 LAN -> 2 independent HYSTERIA2 instances",
+      "ports": {
+        "front": 9450,
+        "primary": 9461,
+        "backup": 9462,
+        "force_primary": 9451,
+        "force_backup": 9452,
+        "api": 9453,
+        "health": 9469
+      },
+      "same_country": true,
+      "entry_port": 9450,
+      "receipts": [
+        {
+          "stage": "primary",
+          "bytes": 16384,
+          "sha256": "35bfc45cb9b24ce7953f2e57f89198b7c608a26f73f9afc8bef6f52b49534559",
+          "received_sha256": "35bfc45cb9b24ce7953f2e57f89198b7c608a26f73f9afc8bef6f52b49534559",
+          "complete": true,
+          "echo_success": 24,
+          "echo_total": 24,
+          "p95_ms": 77.64106302056462,
+          "p99_ms": 78.56887497473508,
+          "max_ms": 81.45511097973213,
+          "jitter_ms": 1.6348074802764407
+        },
+        {
+          "stage": "backup_after_own_primary_stop",
+          "bytes": 16384,
+          "sha256": "a868cb791492a7382633b548617f9d4c2c2cc7178fd1abc6e1023d08d151001c",
+          "received_sha256": "a868cb791492a7382633b548617f9d4c2c2cc7178fd1abc6e1023d08d151001c",
+          "complete": true,
+          "echo_success": 24,
+          "echo_total": 24,
+          "p95_ms": 76.14934502635151,
+          "p99_ms": 76.40074798837304,
+          "max_ms": 79.37688496895134,
+          "jitter_ms": 0.8925458709911808
+        },
+        {
+          "stage": "primary_returned",
+          "bytes": 16384,
+          "sha256": "bf8a48a911436be8555cdf25ac097815b21ee4b411071243fbf49185fbc03771",
+          "received_sha256": "bf8a48a911436be8555cdf25ac097815b21ee4b411071243fbf49185fbc03771",
+          "complete": true,
+          "echo_success": 24,
+          "echo_total": 24,
+          "p95_ms": 76.12244499614462,
+          "p99_ms": 76.37244800571352,
+          "max_ms": 80.3326970199123,
+          "jitter_ms": 0.9845164376715927
+        }
+      ],
+      "full300_baseline": [
+        {
+          "duration": 300.14299709600164,
+          "cpu_mean": 43.09866803317871,
+          "available_kB": 3009616,
+          "ready": true
+        },
+        {
+          "duration": 301.62810921203345,
+          "cpu_mean": 37.696386730792945,
+          "available_kB": 6101600,
+          "ready": true
+        },
+        {
+          "duration": 300.2022027638741,
+          "cpu_mean": 34.32818564703939,
+          "available_kB": 5368216,
+          "ready": true
+        }
+      ]
+    },
+    "FI": {
+      "report_utc": "2026-10-22T09:14:40.535563+00:00",
+      "accepted": true,
+      "published": true,
+      "handoff_ready": true,
+      "controller_exit": 0,
+      "SSH_closed": true,
+      "protocol": "SS2022 LAN -> 2 independent HYSTERIA2 instances",
+      "ports": {
+        "front": 9550,
+        "primary": 9561,
+        "backup": 9562,
+        "force_primary": 9551,
+        "force_backup": 9552,
+        "api": 9553,
+        "health": 9569
+      },
+      "same_country": true,
+      "entry_port": 9550,
+      "receipts": [
+        {
+          "stage": "primary",
+          "bytes": 16384,
+          "sha256": "75ff940377ffb91da953a9e60bb544b02bc0fcc6c4cac8f7d55a767512f6fc4c",
+          "received_sha256": "75ff940377ffb91da953a9e60bb544b02bc0fcc6c4cac8f7d55a767512f6fc4c",
+          "complete": true,
+          "echo_success": 24,
+          "echo_total": 24,
+          "p95_ms": 93.24254101375118,
+          "p99_ms": 93.43584399903193,
+          "max_ms": 94.83056695898995,
+          "jitter_ms": 0.9520632599520943
+        },
+        {
+          "stage": "backup_after_own_primary_stop",
+          "bytes": 16384,
+          "sha256": "4adfbf461dd1e60ccdfc5006b9edb8b0f9702976af7ba51127c372b1569bbd72",
+          "received_sha256": "4adfbf461dd1e60ccdfc5006b9edb8b0f9702976af7ba51127c372b1569bbd72",
+          "complete": true,
+          "echo_success": 24,
+          "echo_total": 24,
+          "p95_ms": 92.40952099207789,
+          "p99_ms": 93.8173439935781,
+          "max_ms": 94.69755896134302,
+          "jitter_ms": 1.2393116460019804
+        },
+        {
+          "stage": "primary_returned",
+          "bytes": 16384,
+          "sha256": "2ada383d4aa6bd350bc225ea38a93d14e7d91292aeafd1ce3dea1c5622d19516",
+          "received_sha256": "2ada383d4aa6bd350bc225ea38a93d14e7d91292aeafd1ce3dea1c5622d19516",
+          "complete": true,
+          "echo_success": 24,
+          "echo_total": 24,
+          "p95_ms": 97.43889898527414,
+          "p99_ms": 100.74565297691151,
+          "max_ms": 101.07385902665555,
+          "jitter_ms": 2.474162406186857
+        }
+      ],
+      "full300_baseline": [
+        {
+          "duration": 300.1480319490074,
+          "cpu_mean": 41.525949410710595,
+          "available_kB": 2973896,
+          "ready": true
+        },
+        {
+          "duration": 301.64654784090817,
+          "cpu_mean": 34.80218640412256,
+          "available_kB": 6063928,
+          "ready": true
+        },
+        {
+          "duration": 300.4670660861302,
+          "cpu_mean": 40.172154151550416,
+          "available_kB": 2428620,
+          "ready": true
+        }
+      ]
+    },
+    "US": {
+      "report_utc": "2026-10-22T10:51:52.785975+00:00",
+      "accepted": true,
+      "published": true,
+      "handoff_ready": true,
+      "controller_exit": 0,
+      "SSH_closed": true,
+      "protocol": "SS2022 LAN -> 2 independent HYSTERIA2 instances",
+      "ports": {
+        "front": 9750,
+        "primary": 9761,
+        "backup": 9762,
+        "force_primary": 9751,
+        "force_backup": 9752,
+        "api": 9753,
+        "health": 9769
+      },
+      "same_country": true,
+      "entry_port": 9750,
+      "receipts": [
+        {
+          "stage": "primary",
+          "bytes": 16384,
+          "sha256": "761c0bb0818d65d8ce078ea4c9da8ee85b9dd8148fb42bd0ff5bceec9e10ce0b",
+          "received_sha256": "761c0bb0818d65d8ce078ea4c9da8ee85b9dd8148fb42bd0ff5bceec9e10ce0b",
+          "complete": true,
+          "echo_success": 24,
+          "echo_total": 24,
+          "p95_ms": 177.5472069857642,
+          "p99_ms": 177.58400703314692,
+          "max_ms": 178.9988250238821,
+          "jitter_ms": 1.0381478274686504
+        },
+        {
+          "stage": "backup_after_own_primary_stop",
+          "bytes": 16384,
+          "sha256": "d6cf55c5afd15d76751c9daea82ace71f3fe205d32fc8d961ffa8df90d4bda45",
+          "received_sha256": "d6cf55c5afd15d76751c9daea82ace71f3fe205d32fc8d961ffa8df90d4bda45",
+          "complete": true,
+          "echo_success": 24,
+          "echo_total": 24,
+          "p95_ms": 184.4942959723994,
+          "p99_ms": 186.21131702093408,
+          "max_ms": 188.23054200038314,
+          "jitter_ms": 1.3986437014587547
+        },
+        {
+          "stage": "primary_returned",
+          "bytes": 16384,
+          "sha256": "8fb01c3b9feaa9e84d5b712422f9c78cfb48729d6050bf45620051246b27f797",
+          "received_sha256": "8fb01c3b9feaa9e84d5b712422f9c78cfb48729d6050bf45620051246b27f797",
+          "complete": true,
+          "echo_success": 24,
+          "echo_total": 24,
+          "p95_ms": 210.8432250097394,
+          "p99_ms": 221.55465802643448,
+          "max_ms": 243.72913502156734,
+          "jitter_ms": 7.438683993709476
+        }
+      ],
+      "full300_baseline": [
+        {
+          "duration": 300.15830408298643,
+          "cpu_mean": 42.40414085362806,
+          "available_kB": 2122824,
+          "ready": true
+        },
+        {
+          "duration": 301.62393300095573,
+          "cpu_mean": 32.7816099541239,
+          "available_kB": 6025148,
+          "ready": true
+        },
+        {
+          "duration": 301.3837299551815,
+          "cpu_mean": 25.988579586009994,
+          "available_kB": 1176272,
+          "ready": true
+        }
+      ]
+    }
+  },
+  "TR": {
+    "UDP_accepted": false,
+    "expired_attempt_must_not_restart": true
+  },
+  "private_configs_included": false
+}

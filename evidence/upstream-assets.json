@@ -1,0 +1,15 @@
+{
+  "binaries_redistributed": false,
+  "sing_box": {
+    "version": "1.14.3",
+    "binary_sha256": "768d31fa7f68debc067bb4626539498a1e8751d36a7b99e1a54bee6a23815f93",
+    "archive_sha256": "e2bdf179c15a3652955dc44867e33ca0965c9c9b91b34267dcc5a5d639a5feee",
+    "upstream": "https://github.com/SagerNet/sing-box"
+  },
+  "wgcf": {
+    "version": "2.3.0",
+    "binary_sha256": "01614e38c0eb5f3405232e71cfaf02d64d4809e4988ad8f5a8071af16d193405",
+    "upstream": "https://github.com/ViRb3/wgcf",
+    "installed_on_production": false
+  }
+}

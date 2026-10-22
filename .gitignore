@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+*.private.*
+*.pem
+*.key
+.env*
+work/
+outputs/
+local-results/
+*.partial
+*.part

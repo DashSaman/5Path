@@ -1,0 +1,180 @@
+{
+  "scope": "ALLOWLISTED_SANITIZED_COMPONENTS",
+  "raw_private_records_included": false,
+  "files": [
+    {
+      "path": "core/country_instance.py",
+      "original_source_sha256": "38fd9ca7f5d3ba359550b41907e530d051e23037dc4a1bc85b09685c8a2648a3",
+      "public_source_sha256": "69db4fb0e86a752e497ca98049688cfaf6f2d7f7fa6e46bd6dd9aafa400e0d64",
+      "deployment_addresses_replaced_with_documentation_examples": true
+    },
+    {
+      "path": "core/country_release_runtime.py",
+      "original_source_sha256": "85836f872d667327b98996eb61ed4dfea48022cc833eb5c81090346c1861bf61",
+      "public_source_sha256": "85836f872d667327b98996eb61ed4dfea48022cc833eb5c81090346c1861bf61",
+      "deployment_addresses_replaced_with_documentation_examples": false
+    },
+    {
+      "path": "core/country_release_native.py",
+      "original_source_sha256": "a953545d73e5314f566e13537d3b6a22e2c98b0a6c31767f91a6440b55560272",
+      "public_source_sha256": "a953545d73e5314f566e13537d3b6a22e2c98b0a6c31767f91a6440b55560272",
+      "deployment_addresses_replaced_with_documentation_examples": false
+    },
+    {
+      "path": "core/country_rule_audit.py",
+      "original_source_sha256": "9373cbdc3c09f21a1be3534e67df81a847da7990a5327a3489267781fcb57580",
+      "public_source_sha256": "9373cbdc3c09f21a1be3534e67df81a847da7990a5327a3489267781fcb57580",
+      "deployment_addresses_replaced_with_documentation_examples": false
+    },
+    {
+      "path": "core/capacity_revision.py",
+      "original_source_sha256": "970cf7d3bffee6ea7541ccaef49fae0c847d8c60c50e55bd254b78fd244bf53b",
+      "public_source_sha256": "970cf7d3bffee6ea7541ccaef49fae0c847d8c60c50e55bd254b78fd244bf53b",
+      "deployment_addresses_replaced_with_documentation_examples": false
+    },
+    {
+      "path": "core/capacity_sidecar_runtime.py",
+      "original_source_sha256": "fa50d54f0dc82d3b818efbfc034c5d78ba2fe8a3edf371a2ce0e0b1d33e1f155",
+      "public_source_sha256": "fa50d54f0dc82d3b818efbfc034c5d78ba2fe8a3edf371a2ce0e0b1d33e1f155",
+      "deployment_addresses_replaced_with_documentation_examples": false
+    },
+    {
+      "path": "core/gaming_native_runtime.py",
+      "original_source_sha256": "0225a32faa605338baa8e45986e3c46bec9a9fbb132b096c4ad9bcf04b59309c",
+      "public_source_sha256": "48e48db84ce4e438ae2e228b0083ae89ee3bc814118f0c606f874a6821bd6b36",
+      "deployment_addresses_replaced_with_documentation_examples": true
+    },
+    {
+      "path": "core/gaming_native_package.py",
+      "original_source_sha256": "094d158489fbea4729841042bd72a3af19b176757bac0a5e75bc3529685ce81f",
+      "public_source_sha256": "ab881d9ef0d7af0a8cc8708ec52e5a2b983346657763c7821d7001406650138b",
+      "deployment_addresses_replaced_with_documentation_examples": false
+    },
+    {
+      "path": "core/gaming_pool_profile.py",
+      "original_source_sha256": "a89f9c130e990b038b9a15437c9b427c59c3fedb6c61d31ca423a5f9ccf355c7",
+      "public_source_sha256": "136788108c8fff2257da7dfecfb4b97cfdd8b14fb91797024da8a1d60dfeeaf6",
+      "deployment_addresses_replaced_with_documentation_examples": true
+    },
+    {
+      "path": "core/hy2_health_profile.py",
+      "original_source_sha256": "6cf29ffa1ff612a5720337dac669ceb5d50e2cc8ab53f9fea1f4c96579f5cf96",
+      "public_source_sha256": "6cf29ffa1ff612a5720337dac669ceb5d50e2cc8ab53f9fea1f4c96579f5cf96",
+      "deployment_addresses_replaced_with_documentation_examples": false
+    },
+    {
+      "path": "core/tuic_health_profile.py",
+      "original_source_sha256": "faf348cc1282150a5ffbe0f5e6ef0af095f3d0e21493c65492d233ad2e657656",
+      "public_source_sha256": "faf348cc1282150a5ffbe0f5e6ef0af095f3d0e21493c65492d233ad2e657656",
+      "deployment_addresses_replaced_with_documentation_examples": false
+    },
+    {
+      "path": "core/udp_health_selector.py",
+      "original_source_sha256": "6468d79437c0ef2c1e551439f977a42a7da0c7647b0bb12e7bd4cd7f90d29afe",
+      "public_source_sha256": "6468d79437c0ef2c1e551439f977a42a7da0c7647b0bb12e7bd4cd7f90d29afe",
+      "deployment_addresses_replaced_with_documentation_examples": false
+    },
+    {
+      "path": "core/udp_socks_probe.py",
+      "original_source_sha256": "be95ffc55213de427b8d56ff8245505b2b85984ea2474ac571234e1808b0f131",
+      "public_source_sha256": "be95ffc55213de427b8d56ff8245505b2b85984ea2474ac571234e1808b0f131",
+      "deployment_addresses_replaced_with_documentation_examples": false
+    },
+    {
+      "path": "core/udp_owned_runtime.py",
+      "original_source_sha256": "1c7fae2a8a6657d7bb08e5f7b83a7bf5f92193792fc6ed2bd16e83593da63ab8",
+      "public_source_sha256": "1c7fae2a8a6657d7bb08e5f7b83a7bf5f92193792fc6ed2bd16e83593da63ab8",
+      "deployment_addresses_replaced_with_documentation_examples": false
+    },
+    {
+      "path": "core/gaming_guard_startup.py",
+      "original_source_sha256": "13212b587c09f13d2889a83f2807a9bb6a7c91c3266fb10c6c33a0a7db3881f3",
+      "public_source_sha256": "13212b587c09f13d2889a83f2807a9bb6a7c91c3266fb10c6c33a0a7db3881f3",
+      "deployment_addresses_replaced_with_documentation_examples": false
+    },
+    {
+      "path": "core/owned_asset_receiver.py",
+      "original_source_sha256": "aa8330c02fa954c816c5bd11c8ccc30bfaa0a76fbe3de31694a701b971491986",
+      "public_source_sha256": "aa8330c02fa954c816c5bd11c8ccc30bfaa0a76fbe3de31694a701b971491986",
+      "deployment_addresses_replaced_with_documentation_examples": false
+    },
+    {
+      "path": "core/mesh_gateway.py",
+      "original_source_sha256": "73434b1d9ac405ce47fb55601a589d09e57280a13cfec07a50319c1d85b29951",
+      "public_source_sha256": "869b5bedb1be74948b2468198d502075068ef5d1fb9e0b913734c0de4f9e2ca1",
+      "deployment_addresses_replaced_with_documentation_examples": false
+    },
+    {
+      "path": "experimental/native_front_config.py",
+      "original_source_sha256": "0ec706f18dd948bead1f4574159b2a023ad19a772fe51e7e11b5a38374df40bb",
+      "public_source_sha256": "8ad894ec8c986c7ee9ea0e1945b7d922733a2a35bf5d0b1cc9459f22d47401cc",
+      "deployment_addresses_replaced_with_documentation_examples": true
+    },
+    {
+      "path": "experimental/native_front_policy.py",
+      "original_source_sha256": "67ddcc51343384d975199f101405f77861e6b4ca444b991fdeb1dc5ab7fcf977",
+      "public_source_sha256": "59f1b111c9665cbd59e7c89592a6565a0f036bb116432df311b5407cd134ba06",
+      "deployment_addresses_replaced_with_documentation_examples": true
+    },
+    {
+      "path": "tests/test_country_instance.py",
+      "original_source_sha256": "363415fc18d4b3ad38288b52522ece48175d23b67b9cb57df4fc027ca895ebaf",
+      "public_source_sha256": "a674a94eb78ac14f959e87301d99d0c1e068b075c11387b3eadd9523c5750ab4",
+      "deployment_addresses_replaced_with_documentation_examples": true
+    },
+    {
+      "path": "tests/test_country_release_runtime.py",
+      "original_source_sha256": "10bb2713de122f5b3112b96ed411651ba56b417c74bc93d6d6bf51baabc9a9eb",
+      "public_source_sha256": "ad33c12d12c804de12b8483d1bd9d38c42f1de696a170bb91e916c5d5350d2c6",
+      "deployment_addresses_replaced_with_documentation_examples": true
+    },
+    {
+      "path": "tests/test_country_rule_audit.py",
+      "original_source_sha256": "e5a59a75275919a6ddafe038a90c38257c2724523bf46d8e2c507f1b0a41bb67",
+      "public_source_sha256": "cccdceec516c95d140e815b4048759b7abf39ced04db47a9f68fc6b06eb052bf",
+      "deployment_addresses_replaced_with_documentation_examples": true
+    },
+    {
+      "path": "tests/test_gaming_native_contract.py",
+      "original_source_sha256": "e7996a1b8c3021a63ce3ac3d5ea0cae348fd4857704a908d93809356806ae2b6",
+      "public_source_sha256": "25a58aa2b12e9bdc8b4fa9bd1dd675858c640be523e76db4dcfc320983b96af2",
+      "deployment_addresses_replaced_with_documentation_examples": true
+    },
+    {
+      "path": "tests/test_gaming_native_package.py",
+      "original_source_sha256": "92d5dc6296da96599fbef2bf8803939e70f3f21970999f9037bc53c4b83617c4",
+      "public_source_sha256": "10347dd3d06744dc613615bd9aabe38f8706e69f4959371238d91abb5dd4f305",
+      "deployment_addresses_replaced_with_documentation_examples": true
+    },
+    {
+      "path": "tests/test_native_front_config.py",
+      "original_source_sha256": "731ae533b081b5797fabf5062ffac9ea8ce85874ddc1c195c42a1b40d798e7e1",
+      "public_source_sha256": "32fdfb0385f372475c4bce42f40a41e3dd59099d8e7146c54efdcb67f8d69b03",
+      "deployment_addresses_replaced_with_documentation_examples": true
+    },
+    {
+      "path": "tests/test_native_front_policy.py",
+      "original_source_sha256": "9737fb5ced486120d615bddd9a25c50e730df8d93f392cf9bb9ed2342732f691",
+      "public_source_sha256": "9737fb5ced486120d615bddd9a25c50e730df8d93f392cf9bb9ed2342732f691",
+      "deployment_addresses_replaced_with_documentation_examples": false
+    },
+    {
+      "path": "integration/test_owned_asset_receiver.py",
+      "original_source_sha256": "d7cdb8cffc4f594d28fdb800207826d899ed31cb923131d4d72a6c3ce82daf3a",
+      "public_source_sha256": "c283ecf8692e6bef2d59024335dc6add26b00e7ce274f7691e4bae835a655bfb",
+      "deployment_addresses_replaced_with_documentation_examples": true
+    },
+    {
+      "path": "integration/native_front_local_fixture.py",
+      "original_source_sha256": "48ed660b9a375fff336f94455f8c641b5007d2b5fe06b55f820b96908a482a29",
+      "public_source_sha256": "38cf3f5237daac6929ec14ab7456c403d9eb82593f5b2e655aa2eccbe0c72a55",
+      "deployment_addresses_replaced_with_documentation_examples": true
+    },
+    {
+      "path": "integration/test_socket_mark_namespaces.py",
+      "original_source_sha256": "628b7d9392bd339a6d2926d0f1492b803a2ed6e3506b988706f0eb83434b89fb",
+      "public_source_sha256": "628b7d9392bd339a6d2926d0f1492b803a2ed6e3506b988706f0eb83434b89fb",
+      "deployment_addresses_replaced_with_documentation_examples": false
+    }
+  ]
+}

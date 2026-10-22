@@ -1,0 +1,13 @@
+{
+  "checked_utc": "2026-10-22T19:54:44.468796+00:00",
+  "portable_unit_tests": 30,
+  "portable_result": "PASS",
+  "isolated_Linux_receiver_tests": 7,
+  "isolated_Linux_receiver_result": "PASS",
+  "local_native_front_fixture": "PASS_AND_CLEAN",
+  "local_socket_mark_namespace_fixture": "PASS_AND_CLEAN",
+  "server_changes_during_this_snapshot": false,
+  "production_optimization_deployed": false,
+  "WARP_installed_or_applied": false,
+  "raw_secrets_included": false
+}

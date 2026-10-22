@@ -1,0 +1,72 @@
+name: بررسی و انتشار نسخه
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: 5path-${{ github.workflow }}-${{ github.sha }}
+  cancel-in-progress: false
+
+jobs:
+  check:
+    name: آزمون و بررسی خروجی عمومی
+    runs-on: ubuntu-24.04
+    steps:
+      - name: دریافت کد همان commit
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: ساخت محیط آزمون مستقل
+        run: |
+          python3 -m venv .venv
+          .venv/bin/python -m pip install -r requirements-dev.txt
+      - name: آزمون‌های محلی بدون سرور
+        run: .venv/bin/python tools/run_tests.py
+      - name: بررسی syntax و انتشار عمومی
+        run: |
+          .venv/bin/python -m compileall -q core experimental tests integration tools
+          .venv/bin/python tools/check_public_tree.py
+
+  release:
+    name: انتشار مستقل همین تغییر
+    needs: check
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    steps:
+      - name: دریافت کد همان commit
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - name: ساخت بسته و یادداشت فارسی
+        env:
+          RELEASE_TAG: v0.1.${{ github.run_number }}
+          RELEASE_NOTES_PATH: ${{ runner.temp }}/release-notes.fa.md
+        run: |
+          python3 tools/release_notes.py
+          git archive --format=zip HEAD -o "$RUNNER_TEMP/5Path-$RELEASE_TAG.zip"
+          cd "$RUNNER_TEMP"
+          sha256sum "5Path-$RELEASE_TAG.zip" > SHA256SUMS
+      - name: ایجاد Release همراه با SHA256
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          RELEASE_TAG: v0.1.${{ github.run_number }}
+        run: |
+          if gh release view "$RELEASE_TAG" >/dev/null 2>&1; then
+            exit 0
+          fi
+          gh release create "$RELEASE_TAG" \
+            --target "$GITHUB_SHA" \
+            --title "$RELEASE_TAG | ثبت فنی و شواهد 5Path" \
+            --notes-file "$RUNNER_TEMP/release-notes.fa.md" \
+            --prerelease \
+            "$RUNNER_TEMP/5Path-$RELEASE_TAG.zip" \
+            "$RUNNER_TEMP/SHA256SUMS"
