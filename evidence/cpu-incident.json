@@ -118,55 +118,210 @@
   "native_front_current_status": {
     "US": {
       "installed_committed": true,
-      "accepted": false,
-      "new_flow_publication_paused": true,
-      "reason": "PUBLISHED_SMALL_FILE_REGRESSION",
-      "bytes_per_file": 16384,
+      "accepted": true,
+      "new_flow_publication_paused": false,
+      "entry_port": 32104,
+      "native_port": 8681,
+      "control_loopback_port": 8685,
+      "reject_loopback_port": 8686,
+      "previous_quality_rejection": {
+        "installed_committed": true,
+        "accepted": false,
+        "new_flow_publication_paused": true,
+        "reason": "PUBLISHED_SMALL_FILE_REGRESSION",
+        "bytes_per_file": 16384,
+        "receipts": [
+          {
+            "bytes": 16384,
+            "sha256": "d354a4dd8a6c8da95f7ea4e011a216ea9d7b436788d0c7bee7bb5c2acf975887",
+            "complete": true,
+            "seconds": 1.032685768965166,
+            "stage": "original-front"
+          },
+          {
+            "bytes": 16384,
+            "sha256": "d354a4dd8a6c8da95f7ea4e011a216ea9d7b436788d0c7bee7bb5c2acf975887",
+            "complete": true,
+            "seconds": 1.6950893569737673,
+            "stage": "shadow-native-front"
+          },
+          {
+            "bytes": 16384,
+            "sha256": "d354a4dd8a6c8da95f7ea4e011a216ea9d7b436788d0c7bee7bb5c2acf975887",
+            "complete": true,
+            "seconds": 5.067885233962443,
+            "stage": "published-native-front"
+          }
+        ],
+        "fresh_full300_baseline": {
+          "IR": {
+            "duration": 300.3454965240089,
+            "cpu_mean": 65.21326151398459,
+            "available_kB": 2178436,
+            "ready": true
+          },
+          "GW": {
+            "duration": 300.4885554041248,
+            "cpu_mean": 50.033760972316,
+            "available_kB": 5696804,
+            "ready": true
+          },
+          "US": {
+            "duration": 300.59177574608475,
+            "cpu_mean": 40.76666192979963,
+            "available_kB": 973508,
+            "ready": true
+          }
+        },
+        "committed_service_never_restarted": true,
+        "existing_connections_not_stopped": true
+      },
       "receipts": [
         {
           "bytes": 16384,
-          "sha256": "d354a4dd8a6c8da95f7ea4e011a216ea9d7b436788d0c7bee7bb5c2acf975887",
+          "sha256": "f2642f3422e5db8a4da1b21eec875bdbda90ea577cdaec584104e57d25e6b426",
           "complete": true,
-          "seconds": 1.032685768965166,
-          "stage": "original-front"
+          "seconds": 1.166759241023101,
+          "stage": "original-front",
+          "phase_seconds": {
+            "gateway_tcp_connected": 0.004372923052869737,
+            "gateway_method_confirmed": 0.001634207961615175,
+            "gateway_authenticated": 0.001368506986182183,
+            "destination_connected": 0.8785740690072998,
+            "origin_headers_received": 0.28067083400674164,
+            "file_sha_verified": 0.00013870000839233398
+          },
+          "elapsed_seconds": {
+            "gateway_tcp_connected": 0.004372923052869737,
+            "gateway_method_confirmed": 0.006007131014484912,
+            "gateway_authenticated": 0.007375638000667095,
+            "destination_connected": 0.8859497070079669,
+            "origin_headers_received": 1.1666205410147086,
+            "file_sha_verified": 1.166759241023101
+          },
+          "one_absolute_deadline_seconds": 15
         },
         {
           "bytes": 16384,
-          "sha256": "d354a4dd8a6c8da95f7ea4e011a216ea9d7b436788d0c7bee7bb5c2acf975887",
+          "sha256": "f2642f3422e5db8a4da1b21eec875bdbda90ea577cdaec584104e57d25e6b426",
           "complete": true,
-          "seconds": 1.6950893569737673,
-          "stage": "shadow-native-front"
+          "seconds": 0.778109595994465,
+          "stage": "shadow-native-front",
+          "phase_seconds": {
+            "gateway_tcp_connected": 0.0033406169968657196,
+            "gateway_method_confirmed": 0.0010591049795038998,
+            "gateway_authenticated": 0.00048160302685573697,
+            "destination_connected": 0.5149402410024777,
+            "origin_headers_received": 0.2581302290200256,
+            "file_sha_verified": 0.00015780096873641014
+          },
+          "elapsed_seconds": {
+            "gateway_tcp_connected": 0.0033406169968657196,
+            "gateway_method_confirmed": 0.004399721976369619,
+            "gateway_authenticated": 0.004881325003225356,
+            "destination_connected": 0.5198215660057031,
+            "origin_headers_received": 0.7779517950257286,
+            "file_sha_verified": 0.778109595994465
+          },
+          "one_absolute_deadline_seconds": 15
         },
         {
           "bytes": 16384,
-          "sha256": "d354a4dd8a6c8da95f7ea4e011a216ea9d7b436788d0c7bee7bb5c2acf975887",
+          "sha256": "f2642f3422e5db8a4da1b21eec875bdbda90ea577cdaec584104e57d25e6b426",
           "complete": true,
-          "seconds": 5.067885233962443,
-          "stage": "published-native-front"
+          "seconds": 0.9482940519810654,
+          "stage": "published-native-front",
+          "phase_seconds": {
+            "gateway_tcp_connected": 0.006073130993172526,
+            "gateway_method_confirmed": 0.0012340070097707212,
+            "gateway_authenticated": 0.0005254030111245811,
+            "destination_connected": 0.7658210970112123,
+            "origin_headers_received": 0.17448331299237907,
+            "file_sha_verified": 0.00015710096340626478
+          },
+          "elapsed_seconds": {
+            "gateway_tcp_connected": 0.006073130993172526,
+            "gateway_method_confirmed": 0.0073071380029432476,
+            "gateway_authenticated": 0.007832541014067829,
+            "destination_connected": 0.7736536380252801,
+            "origin_headers_received": 0.9481369510176592,
+            "file_sha_verified": 0.9482940519810654
+          },
+          "one_absolute_deadline_seconds": 15
         }
       ],
       "fresh_full300_baseline": {
         "IR": {
-          "duration": 300.3454965240089,
-          "cpu_mean": 65.21326151398459,
-          "available_kB": 2178436,
+          "duration": 300.28026155597763,
+          "cpu_mean": 60.0558879093199,
+          "available_kB": 2662048,
           "ready": true
         },
         "GW": {
-          "duration": 300.4885554041248,
-          "cpu_mean": 50.033760972316,
-          "available_kB": 5696804,
+          "duration": 300.48773581394926,
+          "cpu_mean": 45.86555969463608,
+          "available_kB": 5633312,
           "ready": true
         },
         "US": {
-          "duration": 300.59177574608475,
-          "cpu_mean": 40.76666192979963,
-          "available_kB": 973508,
+          "duration": 300.64620472025126,
+          "cpu_mean": 49.16346290758935,
+          "available_kB": 978616,
           "ready": true
         }
       },
       "committed_service_never_restarted": true,
-      "existing_connections_not_stopped": true
+      "old_parent_PID_unchanged": true,
+      "selected_at_final_readback": "US-FRP_TCP",
+      "new_flows_only": true,
+      "production_CPU_improvement_proven": false,
+      "post_full300": {
+        "IR": {
+          "duration": 300.0005846269778,
+          "CPU_weighted_pct": 55.09225280526239,
+          "minimum_MemAvailable_kB": 2622192,
+          "same_unit_state_PID_NRestarts": true
+        },
+        "GW": {
+          "duration": 300.00236726203,
+          "CPU_weighted_pct": 56.31915251387254,
+          "minimum_MemAvailable_kB": 5442184,
+          "same_unit_state_PID_NRestarts": true
+        },
+        "US": {
+          "duration": 300.0004929313436,
+          "CPU_weighted_pct": 59.807288016818504,
+          "minimum_MemAvailable_kB": 868288,
+          "same_unit_state_PID_NRestarts": true
+        }
+      },
+      "GW_post_mean_CPU_cores": {
+        "legacy_gateway": 0.029642502761429126,
+        "native_worker_and_child": 0.05638092177194891,
+        "native_publication_watchdog": 0.016279074877213865
+      },
+      "post_native_state": {
+        "native_before": {
+          "committed": true,
+          "publication_present": true,
+          "ready": true,
+          "selected": "US-GOST_HTTP2",
+          "native_active_connections": 377,
+          "native_uploadTotal": 34086837,
+          "native_downloadTotal": 135640244,
+          "old_gateway_active": 124
+        },
+        "native_after": {
+          "committed": true,
+          "publication_present": true,
+          "ready": true,
+          "selected": "US-FRP_TCP",
+          "native_active_connections": 451,
+          "native_uploadTotal": 70746229,
+          "native_downloadTotal": 477945817,
+          "old_gateway_active": 50
+        }
+      }
     },
     "production_CPU_improvement_proven": false,
     "WARP_installed_or_applied": false,
@@ -287,6 +442,26 @@
       "installed_committed": false,
       "accepted": false,
       "latest_controller_authentication_unavailable_before_any_deployment": true
+    },
+    "native_admission_control": {
+      "legacy_configured_limits": {
+        "DE": 4096,
+        "FI": 2048,
+        "TR": 1024,
+        "US": 2048
+      },
+      "legacy_counts_accepted_and_pending_handshakes": true,
+      "native_equivalent_application_limit_implemented": false,
+      "aggregate_legacy_and_native_cap_implemented": false,
+      "native_systemd_limits_are_not_connection_caps": true,
+      "further_country_rollout_frozen": true,
+      "existing_committed_services_not_restarted_or_paused_by_this_documentation": true,
+      "next_required_local_proof": [
+        "N_held_and_pending",
+        "N_plus_1_rejected_or_bounded",
+        "legacy_native_overlap",
+        "existing_payload_roundtrip_and_PID_preserved"
+      ]
     }
   },
   "WARP_installed_or_applied": false,
