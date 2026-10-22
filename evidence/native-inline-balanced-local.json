@@ -1,0 +1,369 @@
+{
+  "local_only": true,
+  "WAN_bytes": 0,
+  "SSH_connections": 0,
+  "production_changes": false,
+  "cap": 3,
+  "phase": "LOCAL_BALANCED_DATAPLANE_COMPLETE_NOT_PRODUCTION_ACCEPTANCE",
+  "build_patch_sha256": "b5cf6e62ee2f2047f11526364827de08623e2e5efa0f79ce476ba239b61f379f",
+  "binary_SHA256": {
+    "pristine": "34250993427fb77afe5e6f2bea01072240e8127824adcc8dd0106dde7dcd819b",
+    "patched": "e8d72383cc3ea0fb1d6cf539e6146913e448a4c75d17ca472b322535655fbae6"
+  },
+  "checks": {
+    "all_18_trials_completed": true,
+    "all_payload_SHA_and_PID_preserved": true,
+    "every_role_each_position_twice": true,
+    "all_process_ages_within_50ms": true
+  },
+  "production_rollout_unlocked": false,
+  "diagnostic_question": "Does inline cap retain dataplane CPU advantage versus legacy and bounded overhead versus pristine when runtime age/order/CPU precision are controlled?",
+  "scope": "DATAPLANE_PROCESSES_ONLY_NOT_POLICY_WORKER_WATCHDOG_OR_KERNEL",
+  "runtime_age_target_seconds": 2.0,
+  "balanced_orders": [
+    [
+      "old",
+      "pristine",
+      "patched"
+    ],
+    [
+      "pristine",
+      "patched",
+      "old"
+    ],
+    [
+      "patched",
+      "old",
+      "pristine"
+    ],
+    [
+      "patched",
+      "pristine",
+      "old"
+    ],
+    [
+      "old",
+      "patched",
+      "pristine"
+    ],
+    [
+      "pristine",
+      "old",
+      "patched"
+    ]
+  ],
+  "per_trial_bytes_each_direction": 134217728,
+  "file_bytes": 16384,
+  "concurrency": 2,
+  "CPU_accounting_quantum_seconds": 0.01,
+  "total_planned_loopback_bytes_each_direction": 2415919104,
+  "new_downloads": 0,
+  "new_builds": 0,
+  "repeated_sequential_sample": false,
+  "predeclared_criteria": {
+    "dataplane_inline_vs_old_total_ratio_max": 0.9,
+    "inline_vs_pristine_total_ratio_max": 1.1,
+    "observed_age_tolerance_seconds": 0.05,
+    "minimum_each_role_total_CPU_seconds": 2.0
+  },
+  "production_acceptance": false,
+  "samples": [
+    {
+      "group": 0,
+      "position": 0,
+      "role": "old",
+      "process_age_at_measurement": 2.0089643980027176,
+      "wall_seconds": 3.9289964359923033,
+      "dataplane_CPU_seconds": 1.42,
+      "bytes_each_direction": 134217728,
+      "SHA_payload_verified": true,
+      "PID_start_ticks_preserved": true,
+      "observed_peak_RSS_bytes": 22712320,
+      "observed_peak_FDs": 11,
+      "process_lifetime_VmHWM_bytes": 22712320
+    },
+    {
+      "group": 0,
+      "position": 1,
+      "role": "pristine",
+      "process_age_at_measurement": 2.006385947999661,
+      "wall_seconds": 1.6200165640038904,
+      "dataplane_CPU_seconds": 0.6,
+      "bytes_each_direction": 134217728,
+      "SHA_payload_verified": true,
+      "PID_start_ticks_preserved": true,
+      "observed_peak_RSS_bytes": 37220352,
+      "observed_peak_FDs": 21,
+      "process_lifetime_VmHWM_bytes": 37220352
+    },
+    {
+      "group": 0,
+      "position": 2,
+      "role": "patched",
+      "process_age_at_measurement": 2.0075588659965433,
+      "wall_seconds": 1.3884742579975864,
+      "dataplane_CPU_seconds": 0.5499999999999999,
+      "bytes_each_direction": 134217728,
+      "SHA_payload_verified": true,
+      "PID_start_ticks_preserved": true,
+      "observed_peak_RSS_bytes": 37216256,
+      "observed_peak_FDs": 21,
+      "process_lifetime_VmHWM_bytes": 37216256
+    },
+    {
+      "group": 1,
+      "position": 0,
+      "role": "pristine",
+      "process_age_at_measurement": 2.007163197005866,
+      "wall_seconds": 1.26456475899613,
+      "dataplane_CPU_seconds": 0.48,
+      "bytes_each_direction": 134217728,
+      "SHA_payload_verified": true,
+      "PID_start_ticks_preserved": true,
+      "observed_peak_RSS_bytes": 37031936,
+      "observed_peak_FDs": 21,
+      "process_lifetime_VmHWM_bytes": 37031936
+    },
+    {
+      "group": 1,
+      "position": 1,
+      "role": "patched",
+      "process_age_at_measurement": 2.0086139219929464,
+      "wall_seconds": 1.244214275997365,
+      "dataplane_CPU_seconds": 0.49,
+      "bytes_each_direction": 134217728,
+      "SHA_payload_verified": true,
+      "PID_start_ticks_preserved": true,
+      "observed_peak_RSS_bytes": 37306368,
+      "observed_peak_FDs": 21,
+      "process_lifetime_VmHWM_bytes": 37306368
+    },
+    {
+      "group": 1,
+      "position": 2,
+      "role": "old",
+      "process_age_at_measurement": 2.001720550004393,
+      "wall_seconds": 1.3668157270003576,
+      "dataplane_CPU_seconds": 0.75,
+      "bytes_each_direction": 134217728,
+      "SHA_payload_verified": true,
+      "PID_start_ticks_preserved": true,
+      "observed_peak_RSS_bytes": 22654976,
+      "observed_peak_FDs": 11,
+      "process_lifetime_VmHWM_bytes": 22654976
+    },
+    {
+      "group": 2,
+      "position": 0,
+      "role": "patched",
+      "process_age_at_measurement": 2.0101075649872655,
+      "wall_seconds": 1.3680456669972045,
+      "dataplane_CPU_seconds": 0.48,
+      "bytes_each_direction": 134217728,
+      "SHA_payload_verified": true,
+      "PID_start_ticks_preserved": true,
+      "observed_peak_RSS_bytes": 37261312,
+      "observed_peak_FDs": 21,
+      "process_lifetime_VmHWM_bytes": 37261312
+    },
+    {
+      "group": 2,
+      "position": 1,
+      "role": "old",
+      "process_age_at_measurement": 2.021034787001554,
+      "wall_seconds": 1.3858741029980592,
+      "dataplane_CPU_seconds": 0.73,
+      "bytes_each_direction": 134217728,
+      "SHA_payload_verified": true,
+      "PID_start_ticks_preserved": true,
+      "observed_peak_RSS_bytes": 22757376,
+      "observed_peak_FDs": 11,
+      "process_lifetime_VmHWM_bytes": 22757376
+    },
+    {
+      "group": 2,
+      "position": 2,
+      "role": "pristine",
+      "process_age_at_measurement": 2.005827988992678,
+      "wall_seconds": 1.4305563450034242,
+      "dataplane_CPU_seconds": 0.51,
+      "bytes_each_direction": 134217728,
+      "SHA_payload_verified": true,
+      "PID_start_ticks_preserved": true,
+      "observed_peak_RSS_bytes": 36986880,
+      "observed_peak_FDs": 21,
+      "process_lifetime_VmHWM_bytes": 36986880
+    },
+    {
+      "group": 3,
+      "position": 0,
+      "role": "patched",
+      "process_age_at_measurement": 2.0099092199961888,
+      "wall_seconds": 1.409134528003051,
+      "dataplane_CPU_seconds": 0.5,
+      "bytes_each_direction": 134217728,
+      "SHA_payload_verified": true,
+      "PID_start_ticks_preserved": true,
+      "observed_peak_RSS_bytes": 37376000,
+      "observed_peak_FDs": 21,
+      "process_lifetime_VmHWM_bytes": 37376000
+    },
+    {
+      "group": 3,
+      "position": 1,
+      "role": "pristine",
+      "process_age_at_measurement": 2.0097512529900996,
+      "wall_seconds": 1.367088989005424,
+      "dataplane_CPU_seconds": 0.49,
+      "bytes_each_direction": 134217728,
+      "SHA_payload_verified": true,
+      "PID_start_ticks_preserved": true,
+      "observed_peak_RSS_bytes": 37134336,
+      "observed_peak_FDs": 21,
+      "process_lifetime_VmHWM_bytes": 37134336
+    },
+    {
+      "group": 3,
+      "position": 2,
+      "role": "old",
+      "process_age_at_measurement": 2.0053720489959233,
+      "wall_seconds": 1.4062375989888096,
+      "dataplane_CPU_seconds": 0.77,
+      "bytes_each_direction": 134217728,
+      "SHA_payload_verified": true,
+      "PID_start_ticks_preserved": true,
+      "observed_peak_RSS_bytes": 22654976,
+      "observed_peak_FDs": 11,
+      "process_lifetime_VmHWM_bytes": 22654976
+    },
+    {
+      "group": 4,
+      "position": 0,
+      "role": "old",
+      "process_age_at_measurement": 2.0100827560090693,
+      "wall_seconds": 1.3873667509906227,
+      "dataplane_CPU_seconds": 0.77,
+      "bytes_each_direction": 134217728,
+      "SHA_payload_verified": true,
+      "PID_start_ticks_preserved": true,
+      "observed_peak_RSS_bytes": 22638592,
+      "observed_peak_FDs": 11,
+      "process_lifetime_VmHWM_bytes": 22638592
+    },
+    {
+      "group": 4,
+      "position": 1,
+      "role": "patched",
+      "process_age_at_measurement": 2.00686729500012,
+      "wall_seconds": 1.3466474470042158,
+      "dataplane_CPU_seconds": 0.52,
+      "bytes_each_direction": 134217728,
+      "SHA_payload_verified": true,
+      "PID_start_ticks_preserved": true,
+      "observed_peak_RSS_bytes": 37154816,
+      "observed_peak_FDs": 21,
+      "process_lifetime_VmHWM_bytes": 37154816
+    },
+    {
+      "group": 4,
+      "position": 2,
+      "role": "pristine",
+      "process_age_at_measurement": 2.009429027995793,
+      "wall_seconds": 1.326767202001065,
+      "dataplane_CPU_seconds": 0.48,
+      "bytes_each_direction": 134217728,
+      "SHA_payload_verified": true,
+      "PID_start_ticks_preserved": true,
+      "observed_peak_RSS_bytes": 36970496,
+      "observed_peak_FDs": 21,
+      "process_lifetime_VmHWM_bytes": 36970496
+    },
+    {
+      "group": 5,
+      "position": 0,
+      "role": "pristine",
+      "process_age_at_measurement": 2.0088809890003176,
+      "wall_seconds": 1.5561694909993093,
+      "dataplane_CPU_seconds": 0.59,
+      "bytes_each_direction": 134217728,
+      "SHA_payload_verified": true,
+      "PID_start_ticks_preserved": true,
+      "observed_peak_RSS_bytes": 37187584,
+      "observed_peak_FDs": 21,
+      "process_lifetime_VmHWM_bytes": 37187584
+    },
+    {
+      "group": 5,
+      "position": 1,
+      "role": "old",
+      "process_age_at_measurement": 2.0060339030023897,
+      "wall_seconds": 1.365816592995543,
+      "dataplane_CPU_seconds": 0.7899999999999999,
+      "bytes_each_direction": 134217728,
+      "SHA_payload_verified": true,
+      "PID_start_ticks_preserved": true,
+      "observed_peak_RSS_bytes": 22659072,
+      "observed_peak_FDs": 11,
+      "process_lifetime_VmHWM_bytes": 22659072
+    },
+    {
+      "group": 5,
+      "position": 2,
+      "role": "patched",
+      "process_age_at_measurement": 2.0094387169956462,
+      "wall_seconds": 1.3474424690066371,
+      "dataplane_CPU_seconds": 0.51,
+      "bytes_each_direction": 134217728,
+      "SHA_payload_verified": true,
+      "PID_start_ticks_preserved": true,
+      "observed_peak_RSS_bytes": 37163008,
+      "observed_peak_FDs": 21,
+      "process_lifetime_VmHWM_bytes": 37163008
+    }
+  ],
+  "totals_CPU_seconds": {
+    "old": 5.2299999999999995,
+    "pristine": 3.15,
+    "patched": 3.05
+  },
+  "inline_to_old_CPU_ratio": 0.5831739961759083,
+  "inline_to_pristine_CPU_ratio": 0.9682539682539683,
+  "accounting_precision_criterion_met": true,
+  "local_dataplane_criteria_met": true,
+  "all_owned_children_reaped": true,
+  "status": "LOCAL_DATAPLANE_QUESTION_ANSWERED_NOT_SERVER_ACCEPTANCE",
+  "every_group_inline_below_old": true,
+  "paired_inline_to_old_ratio_range": [
+    0.3873239436619718,
+    0.6753246753246753
+  ],
+  "leave_one_group_out_inline_to_old_ratio_range": [
+    0.5672645739910315,
+    0.6561679790026247
+  ],
+  "medians_CPU_seconds": {
+    "old": 0.77,
+    "pristine": 0.5,
+    "patched": 0.505
+  },
+  "observed_maximum_RSS_bytes": {
+    "old": 22757376,
+    "pristine": 37220352,
+    "patched": 37376000
+  },
+  "first_old_trial_outlier_retained": true,
+  "measurement_limits": [
+    "policy worker/watchdog and kernel not measured",
+    "loopback only; no WAN or capacity proof",
+    "first legacy trial higher than others; retained without exclusion",
+    "single development host and fixed long-lived concurrency2 workload",
+    "10ms CPU tick accounting; aggregate each role exceeds2s; no statistical equivalence claim"
+  ],
+  "strict_aggregate_K_supported": false,
+  "whole_server_CPU_benefit_proven": false,
+  "source_sha256": {
+    "private_fixture": "f5f33d0596367e0c28b6c1d5c423bdb965decc49835bfc78f4f0d271fd9db675",
+    "public_fixture": "0684177624cdeb7087c87a8d4575ec6f14df45560988bbdccca7d94e24815e60"
+  },
+  "sanitized_public_benchmark_execution": "NOT_REPEATED; exported path adaptation syntax checked; prior shared helpers functional-tested in v0.1.8"
+}

@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-10-22T23:17:22.008652+00:00",
+  "checked_utc": "2026-10-22T23:39:02.325112+00:00",
   "portable_unit_tests": 43,
   "portable_result": "PASS",
   "isolated_Linux_receiver_tests": 7,
@@ -23,5 +23,11 @@
     "isolated_Linux_receiver_tests",
     "local_native_front_fixture",
     "local_socket_mark_namespace_fixture"
-  ]
+  ],
+  "native_balanced_dataplane_actual_trials": 18,
+  "native_balanced_dataplane_criteria": "PASS_LOCAL_DATAPLANE_ONLY",
+  "native_balanced_public_benchmark_repeated": false,
+  "native_balanced_all_children_reaped": true,
+  "whole_server_CPU_benefit_proven": false,
+  "custom_build_registered_in_deployment": false
 }

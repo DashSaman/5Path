@@ -1,0 +1,45 @@
+{
+  "format": "fivepath.native-build-candidate.v1",
+  "status": "LOCAL_ONLY_NOT_REGISTERED_IN_DEPLOYMENT",
+  "production_eligible": false,
+  "shared_gaming_asset_unchanged": true,
+  "upstream_commit": "7054cac5124465ffdb145870d7c01885566711b1",
+  "compiler": "go1.25.5",
+  "compiler_module_h1": "h1:IkknVKy/4hLMR+ZwWfP4Oqhjz2sKqNtEXz1meP8P3Nc=",
+  "compiler_authentication_limit": "h1 compared with official TLS lookup; sumdb log signature not independently verified",
+  "CGO_ENABLED": "0",
+  "build_tags": [
+    "with_clash_api"
+  ],
+  "GOTOOLCHAIN": "local",
+  "patch_sha256": "b5cf6e62ee2f2047f11526364827de08623e2e5efa0f79ce476ba239b61f379f",
+  "patched_source_files_sha256": {
+    "option/simple.go": "b4930d6b557643c9b0cb2b1f3c942989e4fe42761e69773cbb48ae3cc8aa7a79",
+    "common/listener/listener.go": "c1359d496fd9ca8954e246a009053d9962120ac43b4edab91dd604bcf76b709c",
+    "common/listener/listener_tcp.go": "722547afbfd7f61410f91f610db727e2f2621e7df46217ccceb0dbb3c5a754c7",
+    "protocol/socks/inbound.go": "24f56e88b6054173516b113e4e6eca2d6d1b85bef8666665687b993d6c72588f",
+    "common/listener/tcp_admission.go": "71ea109250ebee37eecd237c328a212c624e1b49c7d5332870108f5f5d24e2cf",
+    "common/listener/tcp_admission_test.go": "fdb5bca99067758fe797f4e8f74212b776cb39cda52bfd9d1fd24bfd644a9242",
+    "protocol/socks/admission_packet.go": "3ae51827698fe2d2906ed98299c59daa48c956cfa44b7e5726deb32c4449795d"
+  },
+  "module_graph_sha256": {
+    "go.mod": "bcddd492e73c480f878206d36816ae0dbd1cae1a777da57b0fd034e9da721d19",
+    "go.sum": "5fa44177a4219976213e3ce746431d6907b32b183ba9b74f8f7d85044b0028ef"
+  },
+  "artifacts": {
+    "pristine": {
+      "sha256": "34250993427fb77afe5e6f2bea01072240e8127824adcc8dd0106dde7dcd819b",
+      "bytes": 36380856
+    },
+    "patched": {
+      "sha256": "e8d72383cc3ea0fb1d6cf539e6146913e448a4c75d17ca472b322535655fbae6",
+      "bytes": 36389048
+    }
+  },
+  "admission_scope": "PER_LISTENER_ONLY_K_PLUS_N_WITH_UNCHANGED_LEGACY",
+  "strict_aggregate_K_supported": false,
+  "functional_fixture_patch_bound": true,
+  "lifecycle_and_production_registration_complete": false,
+  "balanced_dataplane_evidence": "native-inline-balanced-local.json",
+  "production_rollout_unlocked": false
+}

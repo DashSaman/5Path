@@ -261,6 +261,14 @@
       "public_source_sha256": "b5cf6e62ee2f2047f11526364827de08623e2e5efa0f79ce476ba239b61f379f",
       "local_paths_adapted_for_portability": false,
       "production_deployable": false
+    },
+    {
+      "path": "integration/native_inline_balanced_fixture.py",
+      "original_source_sha256": "f5f33d0596367e0c28b6c1d5c423bdb965decc49835bfc78f4f0d271fd9db675",
+      "public_source_sha256": "0684177624cdeb7087c87a8d4575ec6f14df45560988bbdccca7d94e24815e60",
+      "local_paths_adapted_for_portability": true,
+      "production_deployable": false,
+      "public_benchmark_not_repeated": true
     }
   ]
 }
