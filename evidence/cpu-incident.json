@@ -466,7 +466,10 @@
         "legacy_native_overlap",
         "existing_payload_roundtrip_and_PID_preserved"
       ],
-      "new_deployment_entrypoints_fail_closed_before_SSH": true
+      "new_deployment_entrypoints_fail_closed_before_SSH": true,
+      "local_prototype_status": "LOCAL_PROTOTYPE_REJECTED_CPU_REGRESSION",
+      "local_prototype_not_deployed": true,
+      "prototype_per_front_proof_does_not_unlock_rollout": true
     }
   },
   "WARP_installed_or_applied": false,

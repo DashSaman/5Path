@@ -129,6 +129,12 @@
       "deployment_addresses_replaced_with_documentation_examples": false
     },
     {
+      "path": "experimental/native_tcp_admission.py",
+      "original_source_sha256": "3717e3109582366a0debe1f750db5b434b01e14c90c52ecbec029ae2c7981be3",
+      "public_source_sha256": "3717e3109582366a0debe1f750db5b434b01e14c90c52ecbec029ae2c7981be3",
+      "deployment_addresses_replaced_with_documentation_examples": false
+    },
+    {
       "path": "experimental/bounded_tcp_probe.py",
       "original_source_sha256": "79f7d93c6a4381d6d03cb77931d433cfe8152c7319eb674dbfac09b07152035f",
       "public_source_sha256": "79f7d93c6a4381d6d03cb77931d433cfe8152c7319eb674dbfac09b07152035f",
@@ -189,6 +195,12 @@
       "deployment_addresses_replaced_with_documentation_examples": false
     },
     {
+      "path": "tests/test_native_tcp_admission.py",
+      "original_source_sha256": "d5c7c62e16c1607b57938c291e2f737374057a9d16685435042d4212b0d9ddcd",
+      "public_source_sha256": "d5c7c62e16c1607b57938c291e2f737374057a9d16685435042d4212b0d9ddcd",
+      "deployment_addresses_replaced_with_documentation_examples": false
+    },
+    {
       "path": "integration/test_owned_asset_receiver.py",
       "original_source_sha256": "d7cdb8cffc4f594d28fdb800207826d899ed31cb923131d4d72a6c3ce82daf3a",
       "public_source_sha256": "c283ecf8692e6bef2d59024335dc6add26b00e7ce274f7691e4bae835a655bfb",
@@ -228,6 +240,12 @@
       "path": "tools/ir_disk_audit.py",
       "original_source_sha256": "c74e9d72587a5c23f80acf2f3d8d896782bf0cee2bae35b2d947ca09ebc0afb5",
       "public_source_sha256": "065d5f1251a21c522f36a134a67e4e3ed4f3a26710ffa51ce794062abb6b5b39",
+      "deployment_addresses_replaced_with_documentation_examples": true
+    },
+    {
+      "path": "integration/native_admission_fixture.py",
+      "original_source_sha256": "b12427352dbeb2a48fe277605aa315d57f42d4e351c9bbeb8aa1510b4e72cdb2",
+      "public_source_sha256": "f80b5e4a79a6e9ab4f3cc5751c8bfd7b05ba893a1e70d46834172743b2581a24",
       "deployment_addresses_replaced_with_documentation_examples": true
     }
   ]

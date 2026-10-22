@@ -1,0 +1,131 @@
+{
+  "local_only": true,
+  "WAN_bytes": 0,
+  "server_mutations": false,
+  "cap": 3,
+  "legacy_rejects_N_plus_1_with_N_pending": true,
+  "legacy_held_payload_SHA_preserved_after_reject": true,
+  "direct_native_pending_accepted": 4,
+  "direct_native_enforces_legacy_cap": false,
+  "missing_native_admission_reproduced": true,
+  "gate_rejects_N_plus_1_with_N_pending": true,
+  "gate_excess_opens_no_backend": true,
+  "old_native_overlap": {
+    "legacy_cap": 3,
+    "native_gate_cap": 3,
+    "simultaneously_held": 6,
+    "strict_aggregate_legacy_cap_preserved": false
+  },
+  "old_and_gated_held_payload_SHA_preserved": true,
+  "held_payload_survives_native_selection_reject": true,
+  "local_CPU_comparison_same_data_upstream_concurrency": [
+    {
+      "mode": "old",
+      "bytes_each_direction": 33554432,
+      "file_bytes": 16384,
+      "concurrency": 2,
+      "seconds": 0.42872485499538016,
+      "component_CPU_seconds": [
+        0.24000000000000002
+      ],
+      "total_front_CPU_seconds": 0.24000000000000002,
+      "CPU_seconds_per_MiB": 0.007500000000000001
+    },
+    {
+      "mode": "native",
+      "bytes_each_direction": 33554432,
+      "file_bytes": 16384,
+      "concurrency": 2,
+      "seconds": 0.41890871500072535,
+      "component_CPU_seconds": [
+        0.17
+      ],
+      "total_front_CPU_seconds": 0.17,
+      "CPU_seconds_per_MiB": 0.0053125
+    },
+    {
+      "mode": "gated-native",
+      "bytes_each_direction": 33554432,
+      "file_bytes": 16384,
+      "concurrency": 2,
+      "seconds": 0.6117914310016204,
+      "component_CPU_seconds": [
+        0.22000000000000003,
+        0.26999999999999996
+      ],
+      "total_front_CPU_seconds": 0.49,
+      "CPU_seconds_per_MiB": 0.0153125
+    }
+  ],
+  "gated_CPU_better_than_old_in_this_sample": false,
+  "gate_PID_start_ticks_preserved": true,
+  "production_rollout_unlocked": false,
+  "existing_PIDs_start_ticks_preserved": true,
+  "all_owned_children_stopped": true,
+  "status": "LOCAL_PROTOTYPE_REJECTED_CPU_REGRESSION",
+  "portable_socket_tests": 4,
+  "production_deployed": false,
+  "per_front_cap_proven_locally": true,
+  "strict_aggregate_old_native_cap": false,
+  "cap_does_not_include_kernel_listen_SYN_backlog": true,
+  "whole_server_CPU_or_capacity_proven": false,
+  "source_sha256": {
+    "native_tcp_admission.py": "3717e3109582366a0debe1f750db5b434b01e14c90c52ecbec029ae2c7981be3",
+    "native_admission_fixture.py": "b12427352dbeb2a48fe277605aa315d57f42d4e351c9bbeb8aa1510b4e72cdb2",
+    "test_native_tcp_admission.py": "d5c7c62e16c1607b57938c291e2f737374057a9d16685435042d4212b0d9ddcd"
+  },
+  "public_copy_actual_runtime_validation": {
+    "gate_rejects_N_plus_1_with_N_pending": true,
+    "gate_excess_opens_no_backend": true,
+    "old_native_overlap": {
+      "legacy_cap": 3,
+      "native_gate_cap": 3,
+      "simultaneously_held": 6,
+      "strict_aggregate_legacy_cap_preserved": false
+    },
+    "old_and_gated_held_payload_SHA_preserved": true,
+    "held_payload_survives_native_selection_reject": true,
+    "local_CPU_comparison_same_data_upstream_concurrency": [
+      {
+        "mode": "old",
+        "bytes_each_direction": 33554432,
+        "file_bytes": 16384,
+        "concurrency": 2,
+        "seconds": 0.46685433300444856,
+        "component_CPU_seconds": [
+          0.27
+        ],
+        "total_front_CPU_seconds": 0.27,
+        "CPU_seconds_per_MiB": 0.0084375
+      },
+      {
+        "mode": "native",
+        "bytes_each_direction": 33554432,
+        "file_bytes": 16384,
+        "concurrency": 2,
+        "seconds": 0.41473522000887897,
+        "component_CPU_seconds": [
+          0.15999999999999998
+        ],
+        "total_front_CPU_seconds": 0.15999999999999998,
+        "CPU_seconds_per_MiB": 0.004999999999999999
+      },
+      {
+        "mode": "gated-native",
+        "bytes_each_direction": 33554432,
+        "file_bytes": 16384,
+        "concurrency": 2,
+        "seconds": 0.5600204349902924,
+        "component_CPU_seconds": [
+          0.20999999999999996,
+          0.25
+        ],
+        "total_front_CPU_seconds": 0.45999999999999996,
+        "CPU_seconds_per_MiB": 0.014374999999999999
+      }
+    ],
+    "gated_CPU_better_than_old_in_this_sample": false,
+    "all_owned_children_stopped": true,
+    "existing_PIDs_start_ticks_preserved": true
+  }
+}
