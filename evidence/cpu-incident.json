@@ -115,7 +115,63 @@
     "passed": true,
     "cleanup_verified": true
   },
-  "native_front_deployed": false,
+  "native_front_current_status": {
+    "US": {
+      "installed_committed": true,
+      "accepted": false,
+      "new_flow_publication_paused": true,
+      "reason": "PUBLISHED_SMALL_FILE_REGRESSION",
+      "bytes_per_file": 16384,
+      "receipts": [
+        {
+          "bytes": 16384,
+          "sha256": "d354a4dd8a6c8da95f7ea4e011a216ea9d7b436788d0c7bee7bb5c2acf975887",
+          "complete": true,
+          "seconds": 1.032685768965166,
+          "stage": "original-front"
+        },
+        {
+          "bytes": 16384,
+          "sha256": "d354a4dd8a6c8da95f7ea4e011a216ea9d7b436788d0c7bee7bb5c2acf975887",
+          "complete": true,
+          "seconds": 1.6950893569737673,
+          "stage": "shadow-native-front"
+        },
+        {
+          "bytes": 16384,
+          "sha256": "d354a4dd8a6c8da95f7ea4e011a216ea9d7b436788d0c7bee7bb5c2acf975887",
+          "complete": true,
+          "seconds": 5.067885233962443,
+          "stage": "published-native-front"
+        }
+      ],
+      "fresh_full300_baseline": {
+        "IR": {
+          "duration": 300.3454965240089,
+          "cpu_mean": 65.21326151398459,
+          "available_kB": 2178436,
+          "ready": true
+        },
+        "GW": {
+          "duration": 300.4885554041248,
+          "cpu_mean": 50.033760972316,
+          "available_kB": 5696804,
+          "ready": true
+        },
+        "US": {
+          "duration": 300.59177574608475,
+          "cpu_mean": 40.76666192979963,
+          "available_kB": 973508,
+          "ready": true
+        }
+      },
+      "committed_service_never_restarted": true,
+      "existing_connections_not_stopped": true
+    },
+    "other_countries_optimized": false,
+    "production_CPU_improvement_proven": false,
+    "WARP_installed_or_applied": false
+  },
   "WARP_installed_or_applied": false,
   "capacity_claim": false
 }

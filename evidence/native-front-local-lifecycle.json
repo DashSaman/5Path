@@ -1,0 +1,19 @@
+{
+  "local_only": true,
+  "WAN_proven": false,
+  "WAN_bytes": 0,
+  "full300_fixture_simulated": true,
+  "source_sha256": {
+    "native_front_policy.py": "612074b8e96ea4830efeb9b18e4428cf3accea4cbf6605355990bcf280da405b",
+    "native_front_config.py": "0ec706f18dd948bead1f4574159b2a023ad19a772fe51e7e11b5a38374df40bb"
+  },
+  "expired_prepare_exit78": true,
+  "enabled_before_commit_without_restart": true,
+  "direct_native_flow_survives_control_failure": true,
+  "control_503_preserves_existing_and_withdraws_only_new_flows": true,
+  "actual_readback_mismatch_corrected": true,
+  "committed_boot_new_identity_revalidated": true,
+  "exact_redirect_removed": true,
+  "passed": true,
+  "clean": true
+}

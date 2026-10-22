@@ -112,9 +112,15 @@
     },
     {
       "path": "experimental/native_front_policy.py",
-      "original_source_sha256": "67ddcc51343384d975199f101405f77861e6b4ca444b991fdeb1dc5ab7fcf977",
-      "public_source_sha256": "59f1b111c9665cbd59e7c89592a6565a0f036bb116432df311b5407cd134ba06",
+      "original_source_sha256": "612074b8e96ea4830efeb9b18e4428cf3accea4cbf6605355990bcf280da405b",
+      "public_source_sha256": "4e9604280fd96baca36ad73c0b62664702eeb4ba4ac20014d95aa03cd80d5495",
       "deployment_addresses_replaced_with_documentation_examples": true
+    },
+    {
+      "path": "experimental/native_front_acceptance.py",
+      "original_source_sha256": "71284d472e679b63e6a5dbd95d720692d2f3a1a47b8475466ed465040bf44679",
+      "public_source_sha256": "71284d472e679b63e6a5dbd95d720692d2f3a1a47b8475466ed465040bf44679",
+      "deployment_addresses_replaced_with_documentation_examples": false
     },
     {
       "path": "tests/test_country_instance.py",
@@ -154,8 +160,14 @@
     },
     {
       "path": "tests/test_native_front_policy.py",
-      "original_source_sha256": "9737fb5ced486120d615bddd9a25c50e730df8d93f392cf9bb9ed2342732f691",
-      "public_source_sha256": "9737fb5ced486120d615bddd9a25c50e730df8d93f392cf9bb9ed2342732f691",
+      "original_source_sha256": "d7344a2ba29f9a5ddd67993ea49484ab80662e17849bb1f554fffabc4a80f7e1",
+      "public_source_sha256": "d7344a2ba29f9a5ddd67993ea49484ab80662e17849bb1f554fffabc4a80f7e1",
+      "deployment_addresses_replaced_with_documentation_examples": false
+    },
+    {
+      "path": "tests/test_native_front_acceptance.py",
+      "original_source_sha256": "6b8cf2a58a04458a5a7814ce3c3fbfedbaf6416c5ac277c5c2d11707d2ae6554",
+      "public_source_sha256": "6b8cf2a58a04458a5a7814ce3c3fbfedbaf6416c5ac277c5c2d11707d2ae6554",
       "deployment_addresses_replaced_with_documentation_examples": false
     },
     {
@@ -175,6 +187,30 @@
       "original_source_sha256": "628b7d9392bd339a6d2926d0f1492b803a2ed6e3506b988706f0eb83434b89fb",
       "public_source_sha256": "628b7d9392bd339a6d2926d0f1492b803a2ed6e3506b988706f0eb83434b89fb",
       "deployment_addresses_replaced_with_documentation_examples": false
+    },
+    {
+      "path": "integration/native_front_lifecycle_fixture.py",
+      "original_source_sha256": "457c8e45da7891b62bd0d44d087cbd6929789f170893aac4a91a0fe025ac37c9",
+      "public_source_sha256": "ff54ae939ae8c1e45c174dcc881a2d109f5ab83a1239da56286cdbbce6c3f26e",
+      "deployment_addresses_replaced_with_documentation_examples": true
+    },
+    {
+      "path": "integration/test_logrotate_manual_archive.py",
+      "original_source_sha256": "6a05b7684628d29acf069ea07c96a08de06ad82d73fc19d85d1c4a96b160196c",
+      "public_source_sha256": "6a05b7684628d29acf069ea07c96a08de06ad82d73fc19d85d1c4a96b160196c",
+      "deployment_addresses_replaced_with_documentation_examples": false
+    },
+    {
+      "path": "tools/ir_system_log_maintenance.py",
+      "original_source_sha256": "4280cbafe7fa28cfec9118fcfdeec3ab2558711acb6e0981c755cc334653ee58",
+      "public_source_sha256": "4280cbafe7fa28cfec9118fcfdeec3ab2558711acb6e0981c755cc334653ee58",
+      "deployment_addresses_replaced_with_documentation_examples": false
+    },
+    {
+      "path": "tools/ir_disk_audit.py",
+      "original_source_sha256": "c74e9d72587a5c23f80acf2f3d8d896782bf0cee2bae35b2d947ca09ebc0afb5",
+      "public_source_sha256": "065d5f1251a21c522f36a134a67e4e3ed4f3a26710ffa51ce794062abb6b5b39",
+      "deployment_addresses_replaced_with_documentation_examples": true
     }
   ]
 }

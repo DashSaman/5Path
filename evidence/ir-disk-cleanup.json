@@ -1,0 +1,37 @@
+{
+  "checked_utc": "2026-10-22T21:04:50.911738+00:00",
+  "target_role": "IR",
+  "disk_percent_before": 91,
+  "disk_percent_after": 53,
+  "available_bytes_after": 7800954880,
+  "verified_cleanup_allocation_bytes": 6190686208,
+  "old_closed_archive_bytes_removed": 4681486336,
+  "compressed_archive_integrity_tested": true,
+  "active_services_checked": 92,
+  "service_PID_state_NRestarts_changes": {},
+  "TCP_listeners_before": 44,
+  "TCP_listeners_after": 44,
+  "TCP_endpoints_and_owner_PIDs_unchanged": true,
+  "all_netns_listener_audit_completed": true,
+  "UDP_socket_counts_naturally_vary_with_proxy_flows": true,
+  "databases_or_application_backups_removed": false,
+  "application_restarts": 0,
+  "T6_configuration_changes": false,
+  "XUI_configuration_changes": false,
+  "journal_vacuum": false,
+  "open_protection_journals_preserved": true,
+  "rotation_policy": {
+    "targets": [
+      "/var/log/syslog",
+      "/var/log/kern.log"
+    ],
+    "check_interval_seconds": 3600,
+    "size_threshold_MiB": 128,
+    "retained_archives": 4,
+    "max_archive_age_days": 7,
+    "threshold_is_checked_periodically_not_hard_instantaneous_cap": true,
+    "nice": 19,
+    "IO_priority": "idle",
+    "same_logrotate_state_lock": true
+  }
+}
