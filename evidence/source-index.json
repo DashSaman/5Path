@@ -123,6 +123,12 @@
       "deployment_addresses_replaced_with_documentation_examples": false
     },
     {
+      "path": "experimental/native_front_rollout_gate.py",
+      "original_source_sha256": "d9eff132ae3f09ddb1a38161ba59d3e69f6c453f4b1e7a66a2ad95fc55af374f",
+      "public_source_sha256": "d9eff132ae3f09ddb1a38161ba59d3e69f6c453f4b1e7a66a2ad95fc55af374f",
+      "deployment_addresses_replaced_with_documentation_examples": false
+    },
+    {
       "path": "experimental/bounded_tcp_probe.py",
       "original_source_sha256": "79f7d93c6a4381d6d03cb77931d433cfe8152c7319eb674dbfac09b07152035f",
       "public_source_sha256": "79f7d93c6a4381d6d03cb77931d433cfe8152c7319eb674dbfac09b07152035f",

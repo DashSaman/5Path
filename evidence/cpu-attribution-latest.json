@@ -1,0 +1,131 @@
+{
+  "status": "READ_ONLY_DIAGNOSIS_PARTIAL_CPU_OPTIMIZATION",
+  "reported_utc": "2026-10-22T22:23:52.373880+00:00",
+  "full300_nodes": {
+    "IR": {
+      "duration": 300.02714931301307,
+      "CPU_weighted_pct": 53.79027423506871,
+      "CPU_mode_pct": {
+        "user": 23.08723096634655,
+        "nice": 0.02115829934291726,
+        "system": 12.016346745344194,
+        "idle": 46.12979441185805,
+        "iowait": 0.07993135307324298,
+        "irq": 0.0,
+        "softirq": 18.665538224035043,
+        "steal": 0.0
+      },
+      "logical_CPU_count": 8,
+      "minimum_MemAvailable_kB": 2600524,
+      "all_active_service_state_PID_NRestarts_unchanged": true
+    },
+    "GW": {
+      "duration": 300.1059252291452,
+      "CPU_weighted_pct": 37.53640214441724,
+      "CPU_mode_pct": {
+        "user": 0.9580382553444966,
+        "nice": 2.678866900522867,
+        "system": 14.239857038851016,
+        "idle": 62.30392481302535,
+        "iowait": 0.1596730425574161,
+        "irq": 0.0,
+        "softirq": 19.659639949698857,
+        "steal": 0.0
+      },
+      "logical_CPU_count": 4,
+      "minimum_MemAvailable_kB": 5728820,
+      "all_active_service_state_PID_NRestarts_unchanged": true
+    }
+  },
+  "GW_own_slice_followup": {
+    "duration": 60.05816531088203,
+    "host_CPU_pct": 36.549451466232846,
+    "old_country_slices_include_gateway_and_all_children": true,
+    "native_worker_and_watchdog_separate": true,
+    "not_equal_load_comparison": true,
+    "same_gateway_PID_state_NRestarts": true,
+    "results": {
+      "DE": {
+        "mean_CPU_cores": 0.03509419558672572,
+        "memory_after": 392613888
+      },
+      "FI": {
+        "mean_CPU_cores": 0.02507642370032768,
+        "memory_after": 273522688
+      },
+      "TR": {
+        "mean_CPU_cores": 0.02631818657493363,
+        "memory_after": 273903616
+      },
+      "US": {
+        "mean_CPU_cores": 0.09607109991011581,
+        "memory_after": 316612608
+      },
+      "TR-native-worker": {
+        "mean_CPU_cores": 0.0025172097618607683,
+        "memory_after": 29122560
+      },
+      "TR-native-watchdog": {
+        "mean_CPU_cores": 0.014806829269539336,
+        "memory_after": 12881920
+      },
+      "US-native-worker": {
+        "mean_CPU_cores": 0.010324924126306,
+        "memory_after": 34217984
+      },
+      "US-native-watchdog": {
+        "mean_CPU_cores": 0.015001540512206635,
+        "memory_after": 12935168
+      }
+    },
+    "total_observed_own_CPU_cores": 0.2252104094420156
+  },
+  "management_latest": {
+    "DE": {
+      "pinned_SSH_authenticated": true,
+      "owned_units_read": 7,
+      "all_read_units_active": true,
+      "clock_offset_interval_s": [
+        0.5340054035186768,
+        1.9353342056274414
+      ]
+    },
+    "FI": {
+      "pinned_SSH_authenticated": true,
+      "owned_units_read": 7,
+      "all_read_units_active": true,
+      "clock_offset_interval_s": [
+        0.5187256336212158,
+        2.367733955383301
+      ]
+    }
+  },
+  "FI_legacy_egress_restart": {
+    "NRestarts": 1,
+    "active": true,
+    "current_process_started_UTC": "Thu 2026-10-22 03:21:53 UTC",
+    "current_memory_bytes": 32182272,
+    "memory_limit_bytes": 402653184,
+    "current_cgroup_memory_events": {
+      "low": 0,
+      "high": 0,
+      "max": 0,
+      "oom": 0,
+      "oom_kill": 0,
+      "oom_group_kill": 0
+    },
+    "current_cpu_throttled_periods": 0,
+    "journal_entries_available": 0,
+    "historical_restart_cause": "UNKNOWN",
+    "not_a_new_failure_at_observation": true
+  },
+  "new_traffic_generated": false,
+  "services_restarted_or_reconfigured": false,
+  "T6_changes": false,
+  "XUI_changes": false,
+  "CPU_improvement_under_equal_load_proven": false,
+  "WARP_installed": false,
+  "native_application_admission_limit_implemented": false,
+  "further_country_rollout_blocked_before_controller_or_SSH": true,
+  "all_controllers_closed": true
+}

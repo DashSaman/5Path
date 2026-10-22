@@ -436,12 +436,16 @@
       "accepted": false,
       "latest_attempt_stopped_during_baseline": true,
       "exact_guard_failure_cause": "UNKNOWN",
-      "later_public_SSH_refused": true
+      "later_public_SSH_refused": true,
+      "latest_management_pinned_SSH_authenticated": true,
+      "latest_owned_units_active": true
     },
     "FI": {
       "installed_committed": false,
       "accepted": false,
-      "latest_controller_authentication_unavailable_before_any_deployment": true
+      "latest_controller_authentication_unavailable_before_any_deployment": true,
+      "latest_management_pinned_SSH_authenticated": true,
+      "latest_owned_units_active": true
     },
     "native_admission_control": {
       "legacy_configured_limits": {
@@ -461,7 +465,8 @@
         "N_plus_1_rejected_or_bounded",
         "legacy_native_overlap",
         "existing_payload_roundtrip_and_PID_preserved"
-      ]
+      ],
+      "new_deployment_entrypoints_fail_closed_before_SSH": true
     }
   },
   "WARP_installed_or_applied": false,
