@@ -168,9 +168,126 @@
       "committed_service_never_restarted": true,
       "existing_connections_not_stopped": true
     },
-    "other_countries_optimized": false,
     "production_CPU_improvement_proven": false,
-    "WARP_installed_or_applied": false
+    "WARP_installed_or_applied": false,
+    "all_four_country_CPU_optimizations_complete": false,
+    "TR": {
+      "installed_committed": true,
+      "accepted": true,
+      "new_flow_publication_paused": false,
+      "entry_port": 32103,
+      "native_port": 8871,
+      "control_loopback_port": 8875,
+      "reject_loopback_port": 8876,
+      "bytes_per_file": 16384,
+      "receipts": [
+        {
+          "bytes": 16384,
+          "sha256": "0ed6660a967419f23a574810ea94a0db0629d3a5b44f95bf5ad7ae7563377233",
+          "complete": true,
+          "seconds": 0.5535887879668735,
+          "stage": "original-front"
+        },
+        {
+          "bytes": 16384,
+          "sha256": "0ed6660a967419f23a574810ea94a0db0629d3a5b44f95bf5ad7ae7563377233",
+          "complete": true,
+          "seconds": 0.24869959900388494,
+          "stage": "shadow-native-front"
+        },
+        {
+          "bytes": 16384,
+          "sha256": "0ed6660a967419f23a574810ea94a0db0629d3a5b44f95bf5ad7ae7563377233",
+          "complete": true,
+          "seconds": 0.34925879002548754,
+          "stage": "published-native-front"
+        }
+      ],
+      "fresh_full300_baseline": {
+        "IR": {
+          "duration": 300.3356245190371,
+          "cpu_mean": 60.146038786391735,
+          "available_kB": 2477128,
+          "ready": true
+        },
+        "GW": {
+          "duration": 300.4355269111693,
+          "cpu_mean": 43.271532347520036,
+          "available_kB": 5730096,
+          "ready": true
+        },
+        "TR": {
+          "duration": 302.51627196901245,
+          "cpu_mean": 64.29271479908526,
+          "available_kB": 275272,
+          "ready": true
+        }
+      },
+      "new_flows_only": true,
+      "old_sessions_not_restarted": true,
+      "boot_units_enabled_before_commit_without_restart": true,
+      "real_production_reboot_not_performed": true,
+      "production_CPU_improvement_proven": false,
+      "post_full300": {
+        "IR": {
+          "duration": 300.00028640101664,
+          "CPU_weighted_pct": 57.8021857193907,
+          "minimum_MemAvailable_kB": 2401224,
+          "same_unit_state_PID_NRestarts": true
+        },
+        "GW": {
+          "duration": 300.00178910815157,
+          "CPU_weighted_pct": 40.46776811352949,
+          "minimum_MemAvailable_kB": 5695188,
+          "same_unit_state_PID_NRestarts": true
+        },
+        "TR": {
+          "duration": 300.0018295029877,
+          "CPU_weighted_pct": 52.68939887860216,
+          "minimum_MemAvailable_kB": 236572,
+          "same_unit_state_PID_NRestarts": true
+        }
+      },
+      "GW_post_mean_CPU_cores": {
+        "legacy_gateway": 0.010498520723369981,
+        "native_worker_and_child": 0.002549238130457602,
+        "native_publication_watchdog": 0.015069830128146916
+      },
+      "post_native_state": {
+        "native_before": {
+          "committed": true,
+          "publication_present": true,
+          "ready": true,
+          "selected": "TR-GOST_GRPC",
+          "native_active_connections": 0,
+          "native_uploadTotal": 4842,
+          "native_downloadTotal": 41022,
+          "old_gateway_active": 37
+        },
+        "native_after": {
+          "committed": true,
+          "publication_present": true,
+          "ready": true,
+          "selected": "TR-GOST_GRPC",
+          "native_active_connections": 0,
+          "native_uploadTotal": 16442,
+          "native_downloadTotal": 61351,
+          "old_gateway_active": 20
+        }
+      }
+    },
+    "DE": {
+      "installed_committed": false,
+      "accepted": false,
+      "latest_attempt_stopped_during_baseline": true,
+      "exact_guard_failure_cause": "UNKNOWN",
+      "later_public_SSH_refused": true
+    },
+    "FI": {
+      "installed_committed": false,
+      "accepted": false,
+      "latest_controller_authentication_unavailable_before_any_deployment": true
+    }
   },
   "WARP_installed_or_applied": false,
   "capacity_claim": false
