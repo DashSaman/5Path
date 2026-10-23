@@ -285,6 +285,17 @@
       "private_root_and_device_values_replaced_with_required_local_environment": true,
       "read_only": true,
       "public_copy_execution": "syntax_checked; actual remote observation used private original"
+    },
+    {
+      "path": "integration/native_overlap_barrier_fixture.py",
+      "original_source_sha256": "1aa341c85b19770377bcff2c35535a74b9352d5c7e903208f05e5ab038be24b0",
+      "public_source_sha256": "f8b40b75f38986eedb06a7198eb479abae4c1350fb5ce0320e766368eccbfaf0",
+      "local_paths_and_env_adapted": true,
+      "actual_original_attempt_result": "INCOMPLETE_FAILED_NOT_ACCEPTED",
+      "public_copy_executed": false,
+      "public_copy_syntax_checked": true,
+      "production_deployable": false,
+      "do_not_rerun_same_method": true
     }
   ]
 }

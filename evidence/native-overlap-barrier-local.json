@@ -1,0 +1,90 @@
+{
+  "checked_utc": "2026-10-23T00:27:26.678787+00:00",
+  "status": "P2_1_METHOD_STOPPED_AFTER_TWO_INCOMPLETE_ATTEMPTS",
+  "local_only": true,
+  "WAN_bytes": 0,
+  "SSH_connections": 0,
+  "production_changes": false,
+  "CPU_benchmark": false,
+  "K": 3,
+  "file_bytes": 16384,
+  "local_test_buffer_limit_bytes": 8388608,
+  "first": {
+    "status": "INCOMPLETE_FAILED_NO_AUTOMATIC_RETRY",
+    "source_sha256": "e1f4fa9ee8c915559f80db48fb6e936ffde34f4b4416f6f1506945aa75372d8e",
+    "observed_candidate_aggregate": {
+      "visible_legacy_TCP_entries": 1,
+      "actual_legacy_application_slots": 2,
+      "counted_TCP_states": [
+        {
+          "family": "tcp",
+          "state": "01",
+          "inode": "14183026"
+        }
+      ],
+      "proposed_native_N": 2,
+      "computed_sum": 3,
+      "actual_sum": 4,
+      "hidden_slot_kind": "Original legacy task waiting for upstream close after client RST; oracle only observes it"
+    },
+    "assertion_seen": "STRICT_AGGREGATE_K_EXCEEDED:4>3",
+    "acceptance": false,
+    "proof_limitations": [
+      "Oracle had no timestamp or advancing sequence; aggregate count is not accepted as a complete proof.",
+      "Local Server.wait_closed cleanup timed out; owned children were reaped by finalizer."
+    ],
+    "all_owned_children_reaped": true
+  },
+  "second": {
+    "status": "INCOMPLETE_FAILED_NO_AUTOMATIC_RETRY",
+    "source_sha256": "1aa341c85b19770377bcff2c35535a74b9352d5c7e903208f05e5ab038be24b0",
+    "added_observer_freshness_check": true,
+    "oracle_witnesses": [
+      {
+        "pid": 2285,
+        "accepted_pending_tasks": 2,
+        "legacy_source_unchanged": true,
+        "sequence": 36,
+        "monotonic": 100795.073927432,
+        "task_states": [
+          {
+            "await_chain": [
+              {
+                "function": "handler",
+                "line": 298
+              },
+              {
+                "function": "serve_socks",
+                "line": 166
+              }
+            ],
+            "waiting_for_remote_close": false
+          },
+          {
+            "await_chain": [
+              {
+                "function": "handler",
+                "line": 298
+              },
+              {
+                "function": "serve_socks",
+                "line": 166
+              }
+            ],
+            "waiting_for_remote_close": false
+          }
+        ]
+      }
+    ],
+    "error_type": "AssertionError",
+    "failed_assertion": "Expected remote-writer-close await frame; actual fresh observer showed serve_socks waiting for relay gather.",
+    "acceptance": false,
+    "all_owned_children_reaped": true
+  },
+  "interpretation": "Listener-port census is not established as a conservative bound on all accepted/pending/cleanup application tasks. Do not infer a measured remote-close wait, universal kernel-accounting impossibility or completed strict-K counterexample from these incomplete runs.",
+  "method_has_passed_all_ingress_backlog_boot_lease_cleanup": false,
+  "previous_counterexample_verdict_in_failed_first_run_is_not_acceptance": true,
+  "no_third_attempt_of_same_method": true,
+  "production_rollout_unlocked": false,
+  "next": "Review a bounded alternative with legacy K unchanged and an explicitly authorized extra native N. Until owner decision and fresh acceptance gates, do not deploy or relax the hard gate."
+}

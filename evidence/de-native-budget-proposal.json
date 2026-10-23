@@ -1,0 +1,28 @@
+{
+  "status": "OWNER_DECISION_REQUIRED_NOT_DEPLOYABLE",
+  "country": "DE",
+  "protocol": "TCP",
+  "entry_port": 32101,
+  "legacy_K": 4096,
+  "proposed_new_native_N": 128,
+  "maximum_application_sum": 4224,
+  "added_budget_percent": 3.125,
+  "strict_legacy_4096_aggregate_preserved": false,
+  "count_semantics": "Accepted/pending application slots in two separate frontends; kernel SYN/listen backlogs are separate.",
+  "legacy_and_T6_and_user_paths_unchanged": true,
+  "existing_streams_must_be_preserved": true,
+  "candidate_binary_sha256": "e8d72383cc3ea0fb1d6cf539e6146913e448a4c75d17ca472b322535655fbae6",
+  "candidate_is_registered_or_deployed": false,
+  "production_rollout_unlocked": false,
+  "owner_decision_cannot_bypass": [
+    "Fresh healthy monitor and complete300s CPU/RAM baseline",
+    "Fresh exact ownership, pinned access, clock and all-namespace route/rule/NAT/config/listener/peer/ephemeral audit",
+    "Immutable dedicated binary/config/cap manifest and actual lifecycle/boot/lease/control-failure cleanup proof",
+    "One country, one16KiB file, fresh root/CID/key/port/nonce/deadline and independent lease<=10s guard",
+    "Real held/pending/N+1, overlap, half-close, auth/backend failure and survivor SHA/PID checks",
+    "Any runtime or resource regression rejects publication; keep existing streams and their anchor/INPUT"
+  ],
+  "safe_default_while_unanswered": "Keep current services and native rollout freeze; no extra admissions, no user migration.",
+  "capacity_or_whole_server_CPU_claim": false,
+  "owner_approved": false
+}

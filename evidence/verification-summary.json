@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-10-23T00:13:37.437200+00:00",
+  "checked_utc": "2026-10-23T00:28:34.071457+00:00",
   "portable_unit_tests": 43,
   "portable_result": "PASS",
   "isolated_Linux_receiver_tests": 7,
@@ -34,8 +34,14 @@
   "managed_quality_phase1_original_collectors_executed": true,
   "managed_quality_phase1_public_collectors": "SYNTAX_CHECK_ONLY_ENVIRONMENT_ADAPTATIONS_NOT_EXECUTED",
   "managed_quality_phase1_controller_and_SSH_closed": true,
-  "managed_current_phase": "P2_DE_CANDIDATE_LOCAL_ADMISSION_PROOF",
+  "managed_current_phase": "P2_2_WAIT_OWNER_EXPLICIT_DE_BUDGET_DECISION",
   "public_tree_files_checked": 86,
   "public_tree_check": "PASS",
-  "known_private_value_scan": "PASS"
+  "known_private_value_scan": "PASS",
+  "native_overlap_barrier_attempts": 2,
+  "native_overlap_barrier_results": "BOTH_INCOMPLETE_NOT_ACCEPTED",
+  "native_overlap_barrier_all_children_reaped": true,
+  "native_overlap_barrier_public_copy": "SYNTAX_CHECK_ONLY_NOT_EXECUTED",
+  "native_overlap_barrier_method_stopped": true,
+  "DE_budget_proposal_approved": false
 }
