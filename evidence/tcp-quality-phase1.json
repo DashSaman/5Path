@@ -1,0 +1,489 @@
+{
+  "status": "P1_COMPLETE_ONE_BOUNDED_OBSERVATION_AND_TARGETED_FOLLOWUP",
+  "checked_utc": "2026-10-23T00:06:28.994135+00:00",
+  "question": "Is current processing cost attributable to our frontends, kernel/network counters, drops or queue saturation?",
+  "read_only": true,
+  "generated_test_traffic": false,
+  "configuration_changes": false,
+  "service_control_actions": 0,
+  "SSH_closed": true,
+  "monitor": {
+    "age_seconds": 17.635104179382324,
+    "full_CPU_window": {
+      "seconds": 316.00027454202063,
+      "weighted_pct": 26.997049588993548
+    },
+    "monitor_timer_active": true,
+    "valid": true
+  },
+  "nodes": {
+    "IR": {
+      "started_epoch": 1792713183.1724393,
+      "ended_epoch": 1792713243.1823692,
+      "duration_seconds": 60.00993020896567,
+      "kernel_release": "6.8.0-147-generic",
+      "minimum_endpoint_MemAvailable_kB": 3001864,
+      "missing_group_coverage": [
+        "DE-country-slice",
+        "FI-country-slice",
+        "TR-country-slice",
+        "US-country-slice"
+      ],
+      "protocol_counters_delta": {
+        "Tcp.InSegs": 596578,
+        "Tcp.OutSegs": 913662,
+        "Tcp.RetransSegs": 4169,
+        "Tcp.InErrs": 3,
+        "Tcp.OutRsts": 1613,
+        "Tcp.ActiveOpens": 2658,
+        "Tcp.PassiveOpens": 3669,
+        "Tcp.AttemptFails": 0,
+        "Tcp.EstabResets": 357,
+        "Ip.InReceives": 978185,
+        "Ip.InDiscards": 0,
+        "Ip.OutDiscards": 0,
+        "Ip.ReasmReqds": 0,
+        "Ip.ReasmOKs": 0,
+        "Ip.ReasmFails": 0,
+        "Ip.FragOKs": 0,
+        "Ip.FragFails": 0,
+        "Ip.FragCreates": 0,
+        "IpExt.InOctets": 1376407889,
+        "IpExt.OutOctets": 1299309360,
+        "TcpExt.ListenOverflows": 0,
+        "TcpExt.ListenDrops": 0,
+        "TcpExt.TCPBacklogDrop": 0,
+        "TcpExt.TCPRcvQDrop": 0,
+        "TcpExt.TCPTimeouts": 1389,
+        "TcpExt.TCPSynRetrans": 771,
+        "TcpExt.TCPLostRetransmit": 1147,
+        "TcpExt.TCPSpuriousRTOs": 2,
+        "TcpExt.TCPOFOQueue": 19585,
+        "TcpExt.TCPOFODrop": 0,
+        "TcpExt.TCPMemoryPressures": 0
+      },
+      "missing_protocol_counters": [],
+      "own_service_count": 0,
+      "own_service_PID_state_NRestarts_unchanged": true,
+      "all_active_services_before": 80,
+      "all_active_services_after": 80,
+      "all_initial_active_service_identities_unchanged": true,
+      "TCP_CurrEstab_endpoints": [
+        5288,
+        4933
+      ],
+      "known_listener_socket_counts_before": {},
+      "known_listener_socket_counts_after": {},
+      "listener_socket_count_scope": "Current netns TCP tables/known ports only; not exact private handler admission or per-flow byte attribution",
+      "CPU_modes_pct": {
+        "user": 22.950394250923246,
+        "nice": 0.0,
+        "system": 9.424094220980137,
+        "idle": 54.46052500249526,
+        "iowait": 0.08583690987124463,
+        "irq": 0.0,
+        "softirq": 13.079149615730113,
+        "steal": 0.0
+      },
+      "CPU_busy_excluding_iowait_pct": 45.45363808763349,
+      "own_country_groups": {},
+      "total_observed_own_CPU_cores": null,
+      "own_CPU_missing_is_not_zero": true,
+      "softnet_delta": {
+        "processed": 1009274,
+        "dropped": 0,
+        "time_squeeze": 251
+      },
+      "outer_interface_delta": {
+        "rx_bytes": 851084715,
+        "rx_packets": 949207,
+        "rx_errors": 0,
+        "rx_drop": 30,
+        "tx_bytes": 791582935,
+        "tx_packets": 562296,
+        "tx_errors": 0,
+        "tx_drop": 0
+      }
+    },
+    "GW": {
+      "started_epoch": 1792713243.8187997,
+      "ended_epoch": 1792713303.929542,
+      "duration_seconds": 60.1107428080868,
+      "kernel_release": "5.15.0-194-generic",
+      "minimum_endpoint_MemAvailable_kB": 5813496,
+      "missing_group_coverage": [],
+      "protocol_counters_delta": {
+        "Tcp.InSegs": 17783,
+        "Tcp.OutSegs": 17673,
+        "Tcp.RetransSegs": 18,
+        "Tcp.InErrs": 0,
+        "Tcp.OutRsts": 2,
+        "Tcp.ActiveOpens": 644,
+        "Tcp.PassiveOpens": 743,
+        "Tcp.AttemptFails": 7,
+        "Tcp.EstabResets": 3,
+        "Ip.InReceives": 1257748,
+        "Ip.InDiscards": 0,
+        "Ip.OutDiscards": 0,
+        "Ip.ReasmReqds": 0,
+        "Ip.ReasmOKs": 0,
+        "Ip.ReasmFails": 0,
+        "Ip.FragOKs": 0,
+        "Ip.FragFails": 0,
+        "Ip.FragCreates": 0,
+        "IpExt.InOctets": 1463643829,
+        "IpExt.OutOctets": 1506072509,
+        "TcpExt.ListenOverflows": 0,
+        "TcpExt.ListenDrops": 0,
+        "TcpExt.TCPBacklogDrop": 0,
+        "TcpExt.TCPRcvQDrop": 0,
+        "TcpExt.TCPTimeouts": 5,
+        "TcpExt.TCPSynRetrans": 4,
+        "TcpExt.TCPLostRetransmit": 0,
+        "TcpExt.TCPSpuriousRTOs": 0,
+        "TcpExt.TCPOFOQueue": 3,
+        "TcpExt.TCPOFODrop": 0,
+        "TcpExt.TCPMemoryPressures": 0
+      },
+      "missing_protocol_counters": [],
+      "own_service_count": 32,
+      "own_service_PID_state_NRestarts_unchanged": true,
+      "all_active_services_before": 148,
+      "all_active_services_after": 148,
+      "all_initial_active_service_identities_unchanged": true,
+      "TCP_CurrEstab_endpoints": [
+        95,
+        83
+      ],
+      "known_listener_socket_counts_before": {
+        "DE-old-tcp": {
+          "non_listen_sockets": 1,
+          "established": 0,
+          "close_wait": 0
+        },
+        "FI-old-tcp": {
+          "non_listen_sockets": 0,
+          "established": 0,
+          "close_wait": 0
+        },
+        "TR-old-tcp": {
+          "non_listen_sockets": 0,
+          "established": 0,
+          "close_wait": 0
+        },
+        "US-old-tcp": {
+          "non_listen_sockets": 5,
+          "established": 5,
+          "close_wait": 0
+        },
+        "TR-native-tcp": {
+          "non_listen_sockets": 2,
+          "established": 0,
+          "close_wait": 0
+        },
+        "US-native-tcp": {
+          "non_listen_sockets": 4,
+          "established": 2,
+          "close_wait": 0
+        },
+        "DE-old-tcp6": {
+          "non_listen_sockets": 0,
+          "established": 0,
+          "close_wait": 0
+        },
+        "FI-old-tcp6": {
+          "non_listen_sockets": 0,
+          "established": 0,
+          "close_wait": 0
+        },
+        "TR-old-tcp6": {
+          "non_listen_sockets": 0,
+          "established": 0,
+          "close_wait": 0
+        },
+        "US-old-tcp6": {
+          "non_listen_sockets": 0,
+          "established": 0,
+          "close_wait": 0
+        },
+        "TR-native-tcp6": {
+          "non_listen_sockets": 0,
+          "established": 0,
+          "close_wait": 0
+        },
+        "US-native-tcp6": {
+          "non_listen_sockets": 0,
+          "established": 0,
+          "close_wait": 0
+        }
+      },
+      "known_listener_socket_counts_after": {
+        "DE-old-tcp": {
+          "non_listen_sockets": 2,
+          "established": 0,
+          "close_wait": 0
+        },
+        "FI-old-tcp": {
+          "non_listen_sockets": 2,
+          "established": 0,
+          "close_wait": 0
+        },
+        "TR-old-tcp": {
+          "non_listen_sockets": 0,
+          "established": 0,
+          "close_wait": 0
+        },
+        "US-old-tcp": {
+          "non_listen_sockets": 5,
+          "established": 5,
+          "close_wait": 0
+        },
+        "TR-native-tcp": {
+          "non_listen_sockets": 1,
+          "established": 0,
+          "close_wait": 0
+        },
+        "US-native-tcp": {
+          "non_listen_sockets": 3,
+          "established": 2,
+          "close_wait": 0
+        },
+        "DE-old-tcp6": {
+          "non_listen_sockets": 0,
+          "established": 0,
+          "close_wait": 0
+        },
+        "FI-old-tcp6": {
+          "non_listen_sockets": 0,
+          "established": 0,
+          "close_wait": 0
+        },
+        "TR-old-tcp6": {
+          "non_listen_sockets": 0,
+          "established": 0,
+          "close_wait": 0
+        },
+        "US-old-tcp6": {
+          "non_listen_sockets": 0,
+          "established": 0,
+          "close_wait": 0
+        },
+        "TR-native-tcp6": {
+          "non_listen_sockets": 0,
+          "established": 0,
+          "close_wait": 0
+        },
+        "US-native-tcp6": {
+          "non_listen_sockets": 0,
+          "established": 0,
+          "close_wait": 0
+        }
+      },
+      "listener_socket_count_scope": "Current netns TCP tables/known ports only; not exact private handler admission or per-flow byte attribution",
+      "CPU_modes_pct": {
+        "user": 1.0162009079172045,
+        "nice": 1.886635292157761,
+        "system": 10.170338594810712,
+        "idle": 74.06605305901462,
+        "iowait": 0.19574361750864186,
+        "irq": 0.0,
+        "softirq": 12.665028528591062,
+        "steal": 0.0
+      },
+      "CPU_busy_excluding_iowait_pct": 25.738203323476736,
+      "own_country_groups": {
+        "DE-country-slice": {
+          "mean_CPU_cores": 0.024099036749968692,
+          "memory_before": 387567616,
+          "memory_after": 387555328,
+          "memory_events_delta": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0
+          }
+        },
+        "FI-country-slice": {
+          "mean_CPU_cores": 0.022804442866002732,
+          "memory_before": 272699392,
+          "memory_after": 272883712,
+          "memory_events_delta": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0
+          }
+        },
+        "TR-country-slice": {
+          "mean_CPU_cores": 0.02344323051370477,
+          "memory_before": 272117760,
+          "memory_after": 272330752,
+          "memory_events_delta": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0
+          }
+        },
+        "US-country-slice": {
+          "mean_CPU_cores": 0.023083294851803594,
+          "memory_before": 273326080,
+          "memory_after": 272973824,
+          "memory_events_delta": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0
+          }
+        },
+        "TR-native-worker": {
+          "mean_CPU_cores": 0.002425356819586442,
+          "memory_before": 28286976,
+          "memory_after": 28233728,
+          "memory_events_delta": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0
+          }
+        },
+        "TR-native-watchdog": {
+          "mean_CPU_cores": 0.013907098148311954,
+          "memory_before": 12787712,
+          "memory_after": 13115392,
+          "memory_events_delta": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0
+          }
+        },
+        "US-native-worker": {
+          "mean_CPU_cores": 0.0024186192551997727,
+          "memory_before": 30048256,
+          "memory_after": 31059968,
+          "memory_events_delta": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0
+          }
+        },
+        "US-native-watchdog": {
+          "mean_CPU_cores": 0.01375991979737649,
+          "memory_before": 12845056,
+          "memory_after": 12845056,
+          "memory_events_delta": {
+            "low": 0,
+            "high": 0,
+            "max": 0,
+            "oom": 0,
+            "oom_kill": 0
+          }
+        }
+      },
+      "total_observed_own_CPU_cores": 0.12594099900195443,
+      "own_CPU_missing_is_not_zero": false,
+      "softnet_delta": {
+        "processed": 1831233,
+        "dropped": 0,
+        "time_squeeze": 0
+      },
+      "outer_interface_delta": {
+        "rx_bytes": 750502277,
+        "rx_packets": 580065,
+        "rx_errors": 0,
+        "rx_drop": 2953,
+        "tx_bytes": 67482434,
+        "tx_packets": 203827,
+        "tx_errors": 0,
+        "tx_drop": 0
+      }
+    }
+  },
+  "GW_driver_followup": {
+    "duration_seconds": 10.052808451000601,
+    "sysfs_counter_delta": {
+      "tx_errors": 0,
+      "rx_length_errors": 0,
+      "rx_packets": 102263,
+      "tx_carrier_errors": 0,
+      "tx_dropped": 0,
+      "rx_missed_errors": 0,
+      "rx_over_errors": 0,
+      "tx_aborted_errors": 0,
+      "rx_crc_errors": 0,
+      "rx_frame_errors": 0,
+      "rx_nohandler": 0,
+      "tx_fifo_errors": 0,
+      "multicast": 5,
+      "tx_packets": 40242,
+      "tx_window_errors": 0,
+      "rx_bytes": 130694275,
+      "collisions": 0,
+      "rx_dropped": 0,
+      "tx_bytes": 16838826,
+      "tx_heartbeat_errors": 0,
+      "rx_fifo_errors": 0,
+      "rx_errors": 0,
+      "tx_compressed": 0,
+      "rx_compressed": 0
+    },
+    "driver_counter_delta": {
+      "tx_packets": 40246,
+      "rx_packets": 102189,
+      "tx_errors": 0,
+      "rx_errors": 0,
+      "rx_missed": 0,
+      "align_errors": 0,
+      "tx_single_collisions": 0,
+      "tx_multi_collisions": 0,
+      "unicast": 102184,
+      "broadcast": 0,
+      "multicast": 5,
+      "tx_aborted": 0,
+      "tx_underrun": 0
+    },
+    "driver_stats_available": true,
+    "driver": "r8169",
+    "observed_RX_ring": 256,
+    "advertised_maximum_RX_ring": 256,
+    "observed_TX_ring": 256,
+    "advertised_maximum_TX_ring": 256,
+    "channel_query_supported": false,
+    "qdisc": {
+      "kind": "fq",
+      "snapshot_backlog": 0,
+      "snapshot_qlen": 0,
+      "cumulative_drops": 535041,
+      "cumulative_counter_is_not_interval_delta": true
+    },
+    "GRO_and_TSO_reported_enabled": true,
+    "interface_or_tunnel_attribution": false,
+    "RX_drop_was_not_reproduced_in_this_distinct_10s_window": true
+  },
+  "windows_are_sequential_not_equal_load": true,
+  "actual_prior_customer_peak_reproduced": false,
+  "whole_server_CPU_optimization_proven": false,
+  "findings": [
+    "Observed GW process CPU for our groups is low in this window; kernel CPU is not attributable per tunnel from these counters.",
+    "Initial procfs WAN RX-drop delta2953 was observed; distinct10s sysfs/driver follow-up reported zero relevant error/drop/missed deltas.",
+    "No sustained GW softnet drop, listen overflow, receive queue drop, fragmentation failure or TCP memory pressure in these windows.",
+    "IR country-group coverage is absent; do not report missing measurements as zero CPU.",
+    "Initial active service identities remained unchanged: IR80/GW148; no service action was executed."
+  ],
+  "decision": "Do not tune global NIC/ring/qdisc/sysctl from this snapshot. Continue one bounded candidate preparation for own DE TCP, with admission/lifecycle proof; no rerun of answered CPU benchmark.",
+  "references": [
+    "https://docs.kernel.org/networking/statistics.html",
+    "https://docs.kernel.org/networking/snmp_counter.html",
+    "https://github.com/torvalds/linux/blob/v5.15/net/core/net-procfs.c",
+    "https://github.com/torvalds/linux/blob/v6.8/net/core/net-procfs.c"
+  ]
+}

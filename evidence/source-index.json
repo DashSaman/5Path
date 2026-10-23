@@ -269,6 +269,22 @@
       "local_paths_adapted_for_portability": true,
       "production_deployable": false,
       "public_benchmark_not_repeated": true
+    },
+    {
+      "path": "tools/tcp_quality_readonly_probe.py",
+      "original_source_sha256": "6e2b6cb1b306a2f34a3d6943f47e0c828fbc3c1a1496816c94dc3d73580d737f",
+      "public_source_sha256": "c402504fb713f6f6e228f8e565465ba3b6c6a6e3d147a6c5f58e8e9b46e60449",
+      "private_root_and_device_values_replaced_with_required_local_environment": true,
+      "read_only": true,
+      "public_copy_execution": "syntax_checked; actual remote observation used private original"
+    },
+    {
+      "path": "tools/rxdrop_readonly_probe.py",
+      "original_source_sha256": "c6508f0ea7497623b9c15110e78c30e3484caf0dd6a4f39872dd824cf0bf129b",
+      "public_source_sha256": "3b58446989f3d58d97447cd586dd11be701711203e67539d2f34827b4496ef67",
+      "private_root_and_device_values_replaced_with_required_local_environment": true,
+      "read_only": true,
+      "public_copy_execution": "syntax_checked; actual remote observation used private original"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "checked_utc": "2026-10-22T23:39:02.325112+00:00",
+  "checked_utc": "2026-10-23T00:13:37.437200+00:00",
   "portable_unit_tests": 43,
   "portable_result": "PASS",
   "isolated_Linux_receiver_tests": 7,
@@ -29,5 +29,13 @@
   "native_balanced_public_benchmark_repeated": false,
   "native_balanced_all_children_reaped": true,
   "whole_server_CPU_benefit_proven": false,
-  "custom_build_registered_in_deployment": false
+  "custom_build_registered_in_deployment": false,
+  "managed_quality_phase1": "COMPLETE_LIMITED_COVERAGE_NO_SERVER_CHANGE",
+  "managed_quality_phase1_original_collectors_executed": true,
+  "managed_quality_phase1_public_collectors": "SYNTAX_CHECK_ONLY_ENVIRONMENT_ADAPTATIONS_NOT_EXECUTED",
+  "managed_quality_phase1_controller_and_SSH_closed": true,
+  "managed_current_phase": "P2_DE_CANDIDATE_LOCAL_ADMISSION_PROOF",
+  "public_tree_files_checked": 86,
+  "public_tree_check": "PASS",
+  "known_private_value_scan": "PASS"
 }
